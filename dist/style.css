@@ -29,3 +29,18 @@
 .focus-spark{background:#edf6e8;box-shadow:0 0 8px #dfece370}
 @media(max-width:800px){.focus-vertical{right:auto;left:29%;top:-8%;font-size:8px;letter-spacing:2px}.focus-caption{left:32.3%;right:6%;bottom:8%;text-align:left}.focus-caption h2{font-size:clamp(26px,7.8vw,44px)}.focus-caption>span{font-size:7px;letter-spacing:1.5px}.focus-caption p{font-size:9px}.focus-diamond{width:5px;height:5px}}
 @media(max-height:520px) and (orientation:landscape){.focus-caption{left:58%;right:5%;bottom:10%}.focus-caption h2{font-size:29px}}
+/* Diamond portrait with two celestial corner ornaments. */
+.shard-main{left:8%;top:2%;width:84%;height:94%;border:0;border-radius:0;background:#fff8e8;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);box-shadow:none;filter:drop-shadow(0 0 20px #e9edce33)}
+.shard-main .shard-art{inset:3px;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);transform:none;background-size:cover}
+.shard-left,.shard-right,.focus-wire,.focus-diamond{display:none}
+.focus-vertical{left:0;right:0;top:-6%;text-align:center}
+.focus-caption{left:12%;right:12%;text-align:center;bottom:6%}
+.corner-star{position:absolute;z-index:5;display:grid;place-items:center;width:74px;height:74px;pointer-events:none;color:#fff8df;filter:drop-shadow(0 0 12px #f5edc966);animation:starArrival 1.25s .35s both}
+.corner-star:before{content:'✦';font:74px/1 Georgia;animation:celestialBreathe 3.8s ease-in-out infinite}
+.corner-star:after{content:'✧';position:absolute;inset:-11px;display:grid;place-items:center;font:98px/1 Georgia;color:#e5e8d19c;rotate:15deg;animation:celestialOrbit 14s linear infinite}
+.star-upper{top:4%;left:3%;rotate:-10deg}.star-lower{bottom:0;right:3%;width:54px;height:54px;rotate:12deg;animation-delay:.55s}.star-lower:before{font-size:54px;animation-delay:1.2s}.star-lower:after{font-size:74px;inset:-10px;animation-direction:reverse}
+.corner-star i{position:absolute;width:4px;height:4px;left:-9px;bottom:10px;background:#fffce8;border-radius:50%;box-shadow:15px 18px 0 -1px #f6f0d8,56px -46px 0 -1px #f6f0d8,0 0 9px #fff}
+@keyframes starArrival{from{opacity:0;scale:.25;translate:0 12px}to{opacity:1;scale:1;translate:0 0}}@keyframes celestialBreathe{0%,100%{scale:.9;opacity:.7}50%{scale:1.06;opacity:1}}@keyframes celestialOrbit{to{rotate:375deg}}
+@media(max-width:800px){.focus-composition{top:20%;bottom:27%;width:88vw}.focus-vertical{left:0;right:0;top:-7%;font-size:8px}.focus-caption{left:8%;right:8%;bottom:8%;text-align:center}.corner-star{width:55px;height:55px}.corner-star:before{font-size:55px}.corner-star:after{font-size:76px}.star-upper{top:6%;left:1%}.star-lower{bottom:2%;right:1%;width:43px;height:43px}.star-lower:before{font-size:43px}.star-lower:after{font-size:61px}}
+@media(max-height:520px) and (orientation:landscape){.focus-composition{width:40vw;top:17%;bottom:23%}.focus-caption{left:64%;right:3%;bottom:13%;text-align:left}.corner-star{scale:.7}}
+@media(prefers-reduced-motion:reduce){.corner-star,.corner-star:before,.corner-star:after{animation:none!important}}
