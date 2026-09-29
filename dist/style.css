@@ -9,3 +9,23 @@
 .shard-left{left:19%;width:8%;background:#fff;border-color:#fff;box-shadow:0 0 15px #ffffff26}
 .shard-right{left:71%;width:7%;background:#fff;border-color:#fff;box-shadow:0 0 15px #ffffff26}
 .shard-left .shard-art,.shard-right .shard-art{display:none}
+/* Quiet constellation detailing, retaining the portrait composition. */
+.shard-main{border:1px solid #f8f3e2d9;border-radius:18px 2px 18px 2px;box-shadow:0 0 0 5px #e5e5d507,0 20px 65px #0008}
+.shard-left{left:21%;width:5%;height:43%;top:34%;border:0;border-radius:10px 0 0 2px;background:#f9f7ef;opacity:.88;box-shadow:none}
+.shard-right{left:72%;width:4%;height:30%;top:65%;border:0;border-radius:0 2px 10px 0;background:#f9f7ef;opacity:.7;box-shadow:none}
+.focus-vertical{writing-mode:horizontal-tb;right:auto;left:29%;top:-7%;font:10px 'Noto Sans KR',sans-serif;letter-spacing:3px;color:#c2c8c7}
+.vertical-left{display:none}
+.focus-wire{background:linear-gradient(transparent,#c6d7d378,transparent)}
+.wire-one{left:80%;top:18%;height:83%;rotate:7deg}
+.wire-two{left:16%;top:15%;height:59%;rotate:7deg}
+.focus-wire:before{width:4px;height:4px;left:-2px;top:15%;border:1px solid #dce7dd;border-radius:50%;background:#c9d8d133;box-shadow:0 0 8px #cddfd13b}
+.focus-wire:after{width:13px;height:1px;left:-6px;top:73%;border:0;background:#dce7dd80;rotate:0deg}
+.focus-diamond{clip-path:none;width:5px;height:5px;border:1px solid #f2f5e5;border-radius:50%;background:#f4f5e24d;filter:none;box-shadow:0 0 12px #e8f1d780}
+.diamond-one{left:79%;top:12%}.diamond-two{left:15%;top:82%}.diamond-three{display:none}
+.focus-caption{left:calc(50% - min(290px,32vw) + min(580px,64vw)*.29);right:12%;text-align:left;bottom:5%}
+.focus-caption>span{font-size:8px;letter-spacing:3px;color:#b9c6c2}
+.focus-caption h2{font-size:clamp(32px,5vw,76px);margin-top:8px}
+.focus-caption p{font-size:10px;letter-spacing:2px}
+.focus-spark{background:#edf6e8;box-shadow:0 0 8px #dfece370}
+@media(max-width:800px){.focus-vertical{right:auto;left:29%;top:-8%;font-size:8px;letter-spacing:2px}.focus-caption{left:32.3%;right:6%;bottom:8%;text-align:left}.focus-caption h2{font-size:clamp(26px,7.8vw,44px)}.focus-caption>span{font-size:7px;letter-spacing:1.5px}.focus-caption p{font-size:9px}.focus-diamond{width:5px;height:5px}}
+@media(max-height:520px) and (orientation:landscape){.focus-caption{left:58%;right:5%;bottom:10%}.focus-caption h2{font-size:29px}}
