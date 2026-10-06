@@ -321,3 +321,12 @@ header{padding:27px 35px}.brand{color:#dedfd1}.brand span{font-size:12px;letter-
 #posterStage.editable-spread .spread-main{mix-blend-mode:multiply;mask-image:linear-gradient(90deg,transparent,#000 12%,#000 90%,transparent)}
 .editable-spread .spread-title{z-index:5;width:43%}.editable-spread .spread-title em{font-size:9.3cqw}.editable-spread .spread-title p{margin-left:7cqw}
 .editable-spread .spread-close>[data-art]{transform-origin:50% 0}.editable-spread .tape-close{right:1%;top:2%;width:9%;rotate:24deg}
+
+/* Independent reference-matched illustrations, never a flattened page. */
+#posterStage.editable-spread .spread-main{left:32%;top:3%;width:46%;height:111%;mix-blend-mode:normal;mask-image:none;overflow:visible}
+#posterStage.editable-spread .spread-main .collage-hero{mix-blend-mode:normal;background-size:contain!important;background-repeat:no-repeat}
+.editable-spread .spread-close{width:39%;height:60%;right:-3%;top:-5%;rotate:7deg;opacity:.9}.editable-spread .spread-close>[data-art]{transform-origin:center}
+.editable-spread .spread-title{left:6%;top:24%;width:44%;rotate:-10deg}.editable-spread .spread-title em{font-size:10cqw}.editable-spread .spread-title small{position:absolute;top:-10cqw;left:13cqw;font:1.1cqw Georgia;padding:1.2cqw;background:#d7e5f4da;rotate:5deg}.editable-spread .spread-title p{font:1.1cqw/1.4 Georgia;width:53%;margin-left:8cqw}
+.editable-spread .spread-photo{left:4%;bottom:13%;width:29%;height:32%;rotate:7deg}
+.editable-spread .spread-memo{right:1%;top:57%;width:22%;z-index:5}.editable-spread .spread-name{right:3%;bottom:5%;width:27%}
+.editable-spread .spread-floral-overlay{mask-image:linear-gradient(90deg,#000 0,transparent 12%,transparent 91%,#000 100%),linear-gradient(0deg,#000 0,transparent 11%)}
