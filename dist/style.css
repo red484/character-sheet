@@ -271,3 +271,13 @@ header{padding:27px 35px}.brand{color:#dedfd1}.brand span{font-size:12px;letter-
 .blue-persona .kv-paper{background:repeating-linear-gradient(165deg,transparent 0 2.1cqw,#adbfd02b 2.2cqw 2.3cqw),linear-gradient(110deg,#e4d8ee 0 32%,#e7f2f8 32% 62%,#b7d6e9 62%)}.blue-persona .kv-paper b{font-size:4cqw}.blue-persona .kv-petals{font-size:12cqw;top:46%;left:18%;opacity:.7}
 .blue-persona .dream-title{top:16%;left:3%}.blue-persona .kv-type{opacity:.53}.blue-persona .kv-secondary{opacity:.38}
 .poster-mode .scrap-lyric,.poster-mode .scrap-poem,.poster-mode .scrap-hand{animation:collageFragmentIn 1s .5s both}.poster-mode .scrap-stamp,.poster-mode .scrap-petals{animation:collageFragmentIn 1s .75s both}
+
+/* Finished illustration for the supplied character's detail scene. */
+.finished-daydream{display:none}
+.poster-stage.blue-persona{aspect-ratio:16/9;width:min(100vw,177.7778dvh);background:#e9edf8;border:0}
+.poster-stage.blue-persona>*{display:none!important}
+.poster-stage.blue-persona:before,.poster-stage.blue-persona:after{display:none}
+.poster-stage.blue-persona>.finished-daydream{display:block!important;position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.poster-mode .finished-daydream{animation:finishedReveal 1.2s cubic-bezier(.16,1,.3,1) both}
+@keyframes finishedReveal{from{opacity:0;transform:scale(1.035);filter:blur(5px)}to{opacity:1;transform:scale(1);filter:blur(0)}}
+@media(prefers-reduced-motion:reduce){.poster-mode .finished-daydream{animation:none}}
