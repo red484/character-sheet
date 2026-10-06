@@ -175,3 +175,18 @@ header{padding:27px 35px}.brand{color:#dedfd1}.brand span{font-size:12px;letter-
 .dream-editorial:before{content:'';position:absolute;left:-13%;top:57%;width:116%;height:15%;border:2.2cqw solid #abdff1;border-top-color:#eab3ed;border-radius:50%;rotate:-21deg;box-shadow:0 .4cqw white,inset 0 .4cqw white;z-index:0;pointer-events:none}
 .dream-editorial:after{content:'✧  ♡  ✦';position:absolute;left:12%;top:48%;font:5cqw/1 Georgia;letter-spacing:4cqw;color:#ef97d4;rotate:21deg;text-shadow:.2cqw .2cqw white;z-index:7}
 .notebook-rings{left:1%;rotate:-7deg;top:5%;height:93%}
+
+/* Art-directed around the supplied half-body illustration. */
+.poster-stage.blue-persona{background:#fafcff}
+.blue-persona:before{inset:-8% 34% -12% -8%;background:repeating-linear-gradient(transparent 0 2.7cqw,#bbd6ee66 2.8cqw 2.9cqw),#f6fbff;border-color:#c4bcf2;box-shadow:1cqw 1cqw #95e3f1;rotate:-9deg}
+.blue-persona:after{background:radial-gradient(ellipse at 95% 95%,#98cfff88,transparent 45%);mix-blend-mode:multiply;z-index:0}
+.poster-stage.blue-persona .collage-hero{left:19%;top:0;width:62%;height:110%;background-size:contain!important;background-position:50% 0!important;background-repeat:no-repeat;mask-image:none;mix-blend-mode:multiply;z-index:3}
+.blue-persona .dream-editorial{z-index:4}.blue-persona .dream-title{top:9%;left:2%;width:55%;z-index:1;rotate:-12deg}.blue-persona .dream-title em{font-size:10.5cqw;color:#9a95de;text-shadow:.18cqw .2cqw white,.35cqw .4cqw #a2ddec;letter-spacing:-.6cqw}.blue-persona .dream-title>span{color:#79bdce;font-size:4cqw;margin-left:2cqw;margin-bottom:0}.blue-persona .dream-title p{margin-left:1cqw;width:38%;margin-top:1cqw;color:#889cbb}.blue-persona .dream-title small{margin-left:1cqw}
+.blue-persona .dream-polaroid{right:-2%;top:15%;width:25%;height:37%;rotate:13deg;border-color:#b2cbe5;box-shadow:-.8cqw 1cqw #c6bfea99;z-index:4}.blue-persona .dream-photo{background-size:cover!important;background-position:50% 15%!important}.blue-persona .dream-polaroid>span{color:#8d96cb}.blue-persona .dream-polaroid:after{color:#91c9eb}
+.blue-persona .dream-hearts{right:3%;top:5%;background:#a8bbec;box-shadow:.5cqw .6cqw #bbe8ed}
+.blue-persona .dream-note{top:56%;right:-3%;width:25%;padding:1cqw;rotate:-8deg;border-color:#93bdd4;background:#f4fbff;box-shadow:.6cqw .6cqw #c6bde9}.blue-persona .dream-note p{font-size:1.1cqw}
+.blue-persona .dream-window{bottom:3%;right:2%;width:34%;rotate:5deg;border-color:#a2c4e7;box-shadow:.7cqw .8cqw #b5afe4}.blue-persona .window-bar{background:#a4c6e9}.blue-persona .window-body b{color:#788fbf}.blue-persona .window-body>span{color:#98bfe9}
+.blue-persona .dream-ribbon{left:-2%;bottom:4%;width:30%;font-size:2cqw;padding:1.7cqw 3cqw;background:#b8b4e9;rotate:-10deg;box-shadow:.6cqw .6cqw #a7dbe9}.blue-persona .dream-ribbon em{font-size:3cqw}
+.blue-persona .dream-editorial:before{left:-6%;top:73%;width:55%;height:16%;border-width:1.2cqw;border-color:#99dce9;border-top-color:#bbb1e6;rotate:-25deg;z-index:0}
+.blue-persona .dream-editorial:after{left:3%;top:49%;font-size:4cqw;letter-spacing:2cqw;color:#a5b7e1;rotate:-20deg;content:'✧  +'}
+.blue-persona .flower-a{left:5%;top:58%;font-size:8cqw;color:#a3dce7}.blue-persona .flower-b{font-size:8cqw;color:#b6afe3}.blue-persona .dream-spark{left:64%;top:8%;font-size:6cqw;color:#a9c8e9}.blue-persona .notebook-rings{opacity:.6}
