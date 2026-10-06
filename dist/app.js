@@ -75,4 +75,21 @@ $('#detailTitle').oninput=$('#detailNote').oninput=()=>{preparePoster(null,selec
 $('#designOnly').onclick=()=>{const on=$('#posterStage').classList.toggle('design-only');$('#designOnly').setAttribute('aria-pressed',on);$('#designOnly').textContent=on?'이미지 표시':'디자인만 보기';focusDialog.scrollTop=0};
 
 let returnToDetail=false;
-$('#detailEdit').onclick=()=>{clearTimeout(posterStageTimer);returnToDetail=true;focusDialog.close();document.body.classList.remove('character-focused');previewMode='poster';syncSceneButtons();$('#posterStage').classList.remove('design-only');$('#designOnly').textContent='디자인만 보기';$('#designOnly').setAttribute('aria-pressed','false');toggleEditor(true);render()};
+
+
+// Edit directly on the detail canvas, keeping its full composition visible.
+const canvasTools=document.createElement('div');canvasTools.id='canvasTools';canvasTools.innerHTML=`<div class="canvas-tool-head"><strong>상세 편집</strong><button id="canvasDone">완료</button></div><div class="canvas-layer-list"><button data-layer="poster">캐릭터</button><button data-layer="close">큰 사진</button><button data-layer="photo">작은 사진</button><button data-layer="extra">추가 사진</button></div><div class="canvas-tool-row"><button id="canvasReplace">이미지 교체</button><button id="canvasSmaller" aria-label="선택 이미지 축소">−</button><button id="canvasLarger" aria-label="선택 이미지 확대">＋</button><button id="canvasRotateLeft" aria-label="왼쪽 회전">↶</button><button id="canvasRotateRight" aria-label="오른쪽 회전">↷</button></div><label class="canvas-name-label">캐릭터 이름<input id="canvasName" aria-label="상세 캐릭터 이름"></label><p>이미지를 눌러 이동 · 모서리 핸들로 크기 조절</p>`;focusDialog.append(canvasTools);
+let canvasLayer='poster',canvasDrag=null;
+function selectCanvasLayer(key){canvasLayer=key;previewMode=key;document.querySelectorAll('[data-layer]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.layer===key));$('#posterStage').querySelectorAll('[data-art]').forEach(el=>el.parentElement.classList.toggle('canvas-selected',el.dataset.art===key));}
+$('#detailEdit').onclick=()=>{focusDialog.classList.add('canvas-editing');$('#posterStage').classList.remove('design-only');$('#canvasName').value=chars[selected].name;selectCanvasLayer('poster');};
+$('#canvasDone').onclick=()=>{focusDialog.classList.remove('canvas-editing');$('#posterStage').querySelectorAll('.canvas-selected').forEach(el=>el.classList.remove('canvas-selected'));$('#detailEdit').focus()};
+canvasTools.querySelectorAll('[data-layer]').forEach(b=>b.onclick=()=>selectCanvasLayer(b.dataset.layer));
+function refreshCanvas(){preparePoster(null,selected);selectCanvasLayer(canvasLayer)}
+$('#canvasName').oninput=e=>{chars[selected].name=e.target.value;$('#collageName').textContent=e.target.value;render()};
+$('#canvasReplace').onclick=()=>{previewMode=canvasLayer;$('#upload').click()};
+$('#canvasSmaller').onclick=()=>{const c=sceneFor(chars[selected],canvasLayer);c.zoom=Math.max(20,c.zoom-10);refreshCanvas()};
+$('#canvasLarger').onclick=()=>{const c=sceneFor(chars[selected],canvasLayer);c.zoom=Math.min(400,c.zoom+10);refreshCanvas()};
+$('#canvasRotateLeft').onclick=()=>{sceneFor(chars[selected],canvasLayer).rotation-=5;refreshCanvas()};
+$('#canvasRotateRight').onclick=()=>{sceneFor(chars[selected],canvasLayer).rotation+=5;refreshCanvas()};
+$('#posterStage').querySelectorAll('[data-art]').forEach(art=>{const wrap=art.parentElement;const handle=document.createElement('button');handle.className='canvas-scale-handle';handle.setAttribute('aria-label','크기 조절 핸들');wrap.append(handle);wrap.addEventListener('pointerdown',e=>{if(!focusDialog.classList.contains('canvas-editing'))return;e.preventDefault();e.stopPropagation();selectCanvasLayer(art.dataset.art);const c=sceneFor(chars[selected],canvasLayer),rect=wrap.getBoundingClientRect();canvasDrag={id:e.pointerId,x:e.clientX,y:e.clientY,panX:c.panX||0,panY:c.panY||0,zoom:c.zoom,w:rect.width,h:rect.height,scale:e.target===handle};wrap.setPointerCapture(e.pointerId)});wrap.addEventListener('pointermove',e=>{if(!canvasDrag||canvasDrag.id!==e.pointerId)return;const c=sceneFor(chars[selected],canvasLayer),g=canvasDrag;if(g.scale)c.zoom=Math.max(20,Math.min(400,g.zoom+(e.clientX-g.x)/g.w*150));else{c.panX=g.panX+(e.clientX-g.x)/g.w*100;c.panY=g.panY+(e.clientY-g.y)/g.h*100}art.style.transform=imageTransform(c)});wrap.addEventListener('pointerup',()=>{canvasDrag=null});wrap.addEventListener('pointercancel',()=>{canvasDrag=null});});
+const priorUpload=upload;upload=async file=>{await priorUpload(file);if(focusDialog.classList.contains('canvas-editing'))refreshCanvas()};
