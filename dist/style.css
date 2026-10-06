@@ -345,3 +345,5 @@ header{padding:27px 35px}.brand{color:#dedfd1}.brand span{font-size:12px;letter-
 .editable-spread .spread-handwritten{left:4%;bottom:3%;font-size:1.8cqw}.editable-spread .spread-star{left:33%;top:20%}
 #designOnly{display:none}.poster-mode #designOnly{display:block;position:absolute;right:75px;bottom:20px;z-index:12;min-height:44px;border:1px solid #c9b7d7;border-radius:24px;padding:0 18px;background:#fff9fce8;color:#8e719e;font-size:12px;cursor:pointer}.design-only [data-art]{visibility:hidden}
 @media(max-width:600px){.detail-parts{gap:3px}.detail-parts button{font-size:11px;padding:3px}}
+#characterFocus.poster-mode{overflow:hidden}
+#characterFocus.poster-mode #designOnly{position:fixed}

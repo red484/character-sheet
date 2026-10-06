@@ -72,4 +72,4 @@ $('#rotateLeft').onclick=()=>rotateImage(-5);$('#rotateRight').onclick=()=>rotat
 document.querySelectorAll('[data-part]').forEach(b=>b.onclick=()=>{previewMode=b.dataset.part;syncSceneButtons();$('#editPreview').classList.remove('show-result');$('#touchResult').setAttribute('aria-pressed','false');render()});
 $('#detailTitle').oninput=$('#detailNote').oninput=()=>{preparePoster(null,selected);queueEditPreview()};
 
-$('#designOnly').onclick=()=>{const on=$('#posterStage').classList.toggle('design-only');$('#designOnly').setAttribute('aria-pressed',on);$('#designOnly').textContent=on?'이미지 표시':'디자인만 보기'};
+$('#designOnly').onclick=()=>{const on=$('#posterStage').classList.toggle('design-only');$('#designOnly').setAttribute('aria-pressed',on);$('#designOnly').textContent=on?'이미지 표시':'디자인만 보기';focusDialog.scrollTop=0};
