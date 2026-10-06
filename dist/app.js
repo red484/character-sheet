@@ -135,3 +135,8 @@ window.addEventListener('resize',()=>{if(canvasTools.dataset.moved){canvasTools.
 
 // Delete the selected canvas object without intercepting text editing.
 document.addEventListener('keydown',e=>{if(e.key!=='Backspace'||!focusDialog.open||!focusDialog.classList.contains('canvas-editing')||e.isComposing)return;const target=e.target;if(target instanceof Element&&(target.closest('input,textarea,select')||target.isContentEditable||target.closest('[contenteditable="true"]')))return;if(e.ctrlKey||e.metaKey||e.altKey)return;e.preventDefault();canvasDelete.click()});
+
+// Image selection must also leave any previously focused text input.
+const selectLayerWithKeyboardFocus=selectCanvasLayer;
+selectCanvasLayer=function(key){selectLayerWithKeyboardFocus(key);if(focusDialog.classList.contains('canvas-editing')){focusDialog.tabIndex=-1;focusDialog.focus({preventScroll:true})}};
+$('#posterStage').addEventListener('pointerdown',e=>{if(!focusDialog.classList.contains('canvas-editing'))return;const object=e.target.closest('.user-canvas-object');if(object&&!object.isContentEditable){focusDialog.tabIndex=-1;focusDialog.focus({preventScroll:true})}},true);
