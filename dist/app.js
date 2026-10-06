@@ -1,9 +1,10 @@
-const $=s=>document.querySelector(s);let selected=0,layout=1;const names=['Character I','Character II','Character III','Character IV'];const sceneKeys=['slot','diamond','poster','close','photo'];const sceneLabels={slot:'슬롯',diamond:'마름모',poster:'메인',close:'클로즈업',photo:'보조 사진'};
+const $=s=>document.querySelector(s);let selected=0,layout=1;const names=['Character I','Character II','Character III','Character IV'];const sceneKeys=['slot','diamond','poster','close','photo','extra'];const sceneLabels={slot:'슬롯',diamond:'마름모',poster:'메인',close:'클로즈업',photo:'보조 사진',extra:'풍경·추가'};
 function newScene(sample){return {sample,url:null,width:0,height:0,position:50,positionY:50,zoom:100,panX:0,panY:0,rotation:0,empty:false}}
 const chars=names.map((name,i)=>{const c={name,sample:i,scenes:Object.fromEntries(sceneKeys.map(key=>[key,newScene(i)]))};Object.keys(c.scenes.slot).filter(k=>k!=='sample').forEach(k=>Object.defineProperty(c,k,{get(){return c.scenes.slot[k]},set(v){c.scenes.slot[k]=v}}));Object.values(c.scenes).forEach(scene=>Object.defineProperty(scene,'name',{get(){return c.name}}));return c});
 for(const scene of Object.values(chars[0].scenes))Object.assign(scene,{url:'blue-character.png',width:727,height:1021,positionY:0});
-function isDetail(mode){return ['poster','close','photo'].includes(mode)}
+function isDetail(mode){return ['poster','close','photo','extra'].includes(mode)}
 Object.assign(chars[0].scenes.poster,{url:'daydream-main.png',width:1024,height:1536,positionY:0});Object.assign(chars[0].scenes.close,{url:'daydream-close.png',width:1448,height:1086,zoom:100,positionY:50});Object.assign(chars[0].scenes.photo,{url:'daydream-side.png',width:1448,height:1086,positionY:50});
+chars.forEach(c=>Object.assign(c.scenes.extra,{url:null,empty:true}));
 function sceneFor(c,mode){return c.scenes[mode]}
 function activeImage(){return sceneFor(chars[selected],typeof previewMode==='string'?previewMode:'slot')}
 function imageTransform(c){return `translate(${c.panX||0}%,${c.panY||0}%) rotate(${c.rotation||0}deg) scale(${c.zoom/100})`}
@@ -70,3 +71,5 @@ $('#rotateLeft').onclick=()=>rotateImage(-5);$('#rotateRight').onclick=()=>rotat
 
 document.querySelectorAll('[data-part]').forEach(b=>b.onclick=()=>{previewMode=b.dataset.part;syncSceneButtons();$('#editPreview').classList.remove('show-result');$('#touchResult').setAttribute('aria-pressed','false');render()});
 $('#detailTitle').oninput=$('#detailNote').oninput=()=>{preparePoster(null,selected);queueEditPreview()};
+
+$('#designOnly').onclick=()=>{const on=$('#posterStage').classList.toggle('design-only');$('#designOnly').setAttribute('aria-pressed',on);$('#designOnly').textContent=on?'이미지 표시':'디자인만 보기'};
