@@ -132,3 +132,6 @@ inspectorGrip.addEventListener('pointermove',e=>{if(!inspectorDrag||inspectorDra
 function releaseInspector(e){if(!inspectorDrag||inspectorDrag.id!==e.pointerId)return;inspectorDrag=null;canvasTools.classList.remove('inspector-dragging');if(inspectorGrip.hasPointerCapture(e.pointerId))inspectorGrip.releasePointerCapture(e.pointerId)}
 inspectorGrip.addEventListener('pointerup',releaseInspector);inspectorGrip.addEventListener('pointercancel',releaseInspector);
 window.addEventListener('resize',()=>{if(canvasTools.dataset.moved){canvasTools.style.width=Math.min(280,innerWidth-24)+'px';const r=canvasTools.getBoundingClientRect();placeInspector(r.left,r.top)}});
+
+// Delete the selected canvas object without intercepting text editing.
+document.addEventListener('keydown',e=>{if(e.key!=='Backspace'||!focusDialog.open||!focusDialog.classList.contains('canvas-editing')||e.isComposing)return;const target=e.target;if(target instanceof Element&&(target.closest('input,textarea,select')||target.isContentEditable||target.closest('[contenteditable="true"]')))return;if(e.ctrlKey||e.metaKey||e.altKey)return;e.preventDefault();canvasDelete.click()});
