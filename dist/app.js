@@ -3,6 +3,7 @@ function newScene(sample){return {sample,url:null,width:0,height:0,position:50,p
 const chars=names.map((name,i)=>{const c={name,sample:i,scenes:Object.fromEntries(sceneKeys.map(key=>[key,newScene(i)]))};Object.keys(c.scenes.slot).filter(k=>k!=='sample').forEach(k=>Object.defineProperty(c,k,{get(){return c.scenes.slot[k]},set(v){c.scenes.slot[k]=v}}));Object.values(c.scenes).forEach(scene=>Object.defineProperty(scene,'name',{get(){return c.name}}));return c});
 for(const scene of Object.values(chars[0].scenes))Object.assign(scene,{url:'blue-character.png',width:727,height:1021,positionY:0});
 function isDetail(mode){return ['poster','close','photo'].includes(mode)}
+Object.assign(chars[0].scenes.close,{zoom:160,positionY:0});
 function sceneFor(c,mode){return c.scenes[mode]}
 function activeImage(){return sceneFor(chars[selected],typeof previewMode==='string'?previewMode:'slot')}
 function imageTransform(c){return `translate(${c.panX||0}%,${c.panY||0}%) rotate(${c.rotation||0}deg) scale(${c.zoom/100})`}
