@@ -544,3 +544,31 @@ header .edition{display:none}
 }
 @media(prefers-reduced-motion:reduce){#characterFocus #posterStage.profile-screen,#characterFocus #posterStage.profile-screen *{animation:none!important;transition:none!important}}
 @media(max-width:800px){#characterFocus.poster-mode{display:block!important;align-items:initial!important;justify-content:initial!important;padding:0!important}#characterFocus.poster-mode #posterStage.profile-screen,#characterFocus.canvas-editing #posterStage.profile-screen{margin:0!important;align-self:start!important;justify-self:start!important;bottom:auto!important;right:auto!important}}
+/* Character reveal: decisive cut, counter-moving name and one light sweep. */
+.poster-mode:not(.canvas-editing) #posterStage.profile-screen{animation:archiveCut .65s cubic-bezier(.16,1,.3,1) both!important}
+.poster-mode:not(.canvas-editing) #posterStage.profile-screen>.spread-main{animation:archiveHeroReveal 1.05s .08s cubic-bezier(.16,1,.3,1) both!important;transform-origin:50% 35%}
+.poster-mode:not(.canvas-editing) .hero-watermark{animation:archiveNameReveal 1.1s .12s cubic-bezier(.16,1,.3,1) both!important}
+.poster-mode:not(.canvas-editing) .dossier-nav{animation:archiveRailReveal .65s .32s cubic-bezier(.16,1,.3,1) both!important}
+.poster-mode:not(.canvas-editing) .dossier-info{animation:archiveCopyReveal .7s .4s cubic-bezier(.16,1,.3,1) both!important}
+@keyframes archiveCut{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0)}}
+@keyframes archiveHeroReveal{0%{opacity:0;translate:38px 12px;scale:1.07;filter:brightness(1.6)}35%{opacity:1;filter:brightness(1)}100%{opacity:1;translate:0 0;scale:1;filter:brightness(1)}}
+@keyframes archiveNameReveal{from{opacity:0;translate:-70px 0;clip-path:inset(0 100% 0 0)}to{opacity:1;translate:0 0;clip-path:inset(0)}}
+@keyframes archiveRailReveal{from{opacity:0;translate:-20px 0}to{opacity:1;translate:0 0}}
+@keyframes archiveCopyReveal{from{opacity:0;translate:0 18px;clip-path:inset(0 0 35% 0)}to{opacity:1;translate:0 0;clip-path:inset(0)}}
+@media(max-width:800px){
+#posterStage.profile-screen:before{background:linear-gradient(115deg,#cad9e6 0%,#edf1f2 52%,#e0e6ed 100%)!important;filter:none}
+#posterStage.profile-screen:after{inset:78px auto auto 22px;width:1px;height:42dvh;border:0;border-radius:0;box-shadow:none;background:#677f9d55;transform:none}
+.poster-mode .detail-atmosphere,.poster-mode .detail-light{display:none!important}
+.hero-watermark{top:128px;left:-5%;max-width:110%;font:italic 27vw/.9 'Cormorant Garamond',Georgia;color:#526d8c17;-webkit-text-stroke:1px #61789335;transform:rotate(-90deg);transform-origin:46% 120%;letter-spacing:-.055em}
+#characterFocus #posterStage.profile-screen>.spread-main{left:8%!important;width:94%!important;height:56dvh!important;mask-image:linear-gradient(black 82%,transparent 100%)}
+.character-dossier{padding-top:55dvh}
+.dossier-nav{margin:0 24px;padding:0;border:0;border-top:1px solid #60758d45;border-bottom:1px solid #60758d45;border-radius:0;background:none;box-shadow:none;backdrop-filter:none}
+.dossier-nav button{min-height:64px;border-radius:0;position:relative;gap:6px;color:#708093;background:transparent!important;box-shadow:none!important}
+.dossier-nav button b{font:9px Georgia;letter-spacing:.12em}.dossier-nav button small{font-size:12px;font-weight:500}
+.dossier-nav button[aria-pressed=true]{color:#263e59}.dossier-nav button[aria-pressed=true]:before{content:'';position:absolute;left:20%;right:20%;bottom:-1px;height:3px;background:#385a7c}
+.dossier-info{padding:27px 27px 12px}.dossier-name{font-size:44px;color:#2e4256;letter-spacing:-.045em}.dossier-eyebrow{color:#61758d}.profile-identity{color:#697c91}.profile-identity .affiliation{color:#697c91}.dossier-rule{display:none}.dossier-description{color:#53677d;margin-top:20px}.dossier-footer{letter-spacing:.15em}
+.archive-actions button,#characterFocus.poster-mode #focusBack,.poster-mode #detailEdit,.poster-mode #detailMotionToggle,.poster-mode #replayReveal{border-radius:3px!important;background:#edf1f3ed!important;border-color:#8c9bae66!important;color:#344e67!important;box-shadow:none!important;backdrop-filter:none!important}
+.archive-actions button[aria-pressed=true]{background:#344e67!important;color:#fff!important}
+}
+@media(prefers-reduced-motion:reduce){#characterFocus #posterStage.profile-screen,#characterFocus #posterStage.profile-screen *{animation:none!important;transition:none!important}}
+@media(max-width:800px){#characterFocus:not(.portrait-only):not(.canvas-editing) #posterStage.profile-screen>.spread-main{height:46dvh!important;mask-image:linear-gradient(black 86%,transparent 100%)}}
