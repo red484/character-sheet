@@ -20,6 +20,20 @@
       "file": "stock-sky.jpg",
       "photographer": "Chris Nguyen",
       "source": "https://unsplash.com/photos/blue-sky-and-white-clouds-lbmrrNgq2lo"
+    },
+    {
+      "file": "flower-clematis.png",
+      "photographer": "Bff",
+      "source": "https://commons.wikimedia.org/wiki/File:Clematis20090812_509.png",
+      "license": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "changes": "Original PNG unchanged; displayed resized, rotated, with CSS color treatment. These flower treatments are CC BY-SA 3.0."
+    },
+    {
+      "file": "flower-clematis-side.png",
+      "photographer": "Bff",
+      "source": "https://commons.wikimedia.org/wiki/File:Clematis20090812_510.png",
+      "license": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "changes": "Original PNG unchanged; displayed resized, rotated, with CSS color treatment. These flower treatments are CC BY-SA 3.0."
     }
   ]
 }
