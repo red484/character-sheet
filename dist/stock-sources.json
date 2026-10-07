@@ -10,6 +10,16 @@
       "file": "stock-paper.jpg",
       "photographer": "Heather Green",
       "source": "https://unsplash.com/photos/crumpled-blank-paper-texture-1GuZ9y1qAT8"
+    },
+    {
+      "file": "stock-daisy.jpg",
+      "photographer": "AARN GIRI",
+      "source": "https://unsplash.com/photos/white-daisy-in-bloom-during-daytime-3tYZjGSBwbk"
+    },
+    {
+      "file": "stock-sky.jpg",
+      "photographer": "Chris Nguyen",
+      "source": "https://unsplash.com/photos/blue-sky-and-white-clouds-lbmrrNgq2lo"
     }
   ]
 }

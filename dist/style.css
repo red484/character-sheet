@@ -472,3 +472,23 @@ header .edition{display:none}
 #posterStage.editable-spread:before{background-color:#dfe6ff!important;background-blend-mode:color,luminosity!important}
 #posterStage.editable-spread .spread-paper{background-color:#f0f2ff!important;background-blend-mode:multiply,luminosity!important}
 #posterStage.editable-spread .spread-name,#posterStage.editable-spread .spread-memo,#posterStage.editable-spread .spread-title small{background-color:#eff0fb;background-blend-mode:luminosity}
+
+/* Layered photo-journal composition: sky, botanical photos, notes and silk-like arcs. */
+#posterStage.editable-spread:before{background-image:linear-gradient(115deg,#e8eeffcc,#efecf5aa),url('stock-paper.jpg')!important;background-blend-mode:normal,luminosity!important}
+#posterStage.editable-spread .spread-paper{background-image:repeating-linear-gradient(transparent 0 2.7cqw,#879bc02b 2.76cqw 2.83cqw),linear-gradient(#ffffffe0,#ffffffa8),url('stock-paper.jpg')!important;background-blend-mode:multiply,normal,luminosity!important}
+#posterStage.editable-spread .spread-close{right:-1%;top:-8%;width:36%;height:57%;rotate:12deg;opacity:.9;mix-blend-mode:normal;border-width:.9cqw;filter:saturate(.7)}
+#posterStage.editable-spread .spread-photo{left:5%;bottom:13%;width:28%;height:32%;rotate:-9deg;filter:saturate(.65)}
+#posterStage.editable-spread .spread-extra{right:2%;top:60%;width:22%;height:23%;rotate:9deg;filter:saturate(.3);opacity:.85}
+#posterStage.editable-spread .spread-main{mix-blend-mode:normal}
+#posterStage.editable-spread .spread-title{top:24%;left:4%;width:43%}#posterStage.editable-spread .spread-title em{color:#7779c1!important;text-shadow:.12cqw .15cqw white}
+#posterStage.editable-spread .spread-title small{position:absolute;top:-10cqw;left:5cqw;rotate:-7deg;color:#777cad}
+#posterStage.editable-spread .spread-title p{font-size:1.1cqw;width:67%;margin-left:6%;color:#8185a8}
+#posterStage.editable-spread .spread-ribbon{z-index:48;opacity:.8!important;filter:drop-shadow(0 .2cqw .3cqw #899ac544)}
+#posterStage.editable-spread .spread-ribbon path{stroke:#b5b8e6b0;stroke-width:24}#posterStage.editable-spread .spread-ribbon path+path{stroke:#f0fbffe0;stroke-width:3}
+#posterStage.editable-spread .spread-name{right:3%;bottom:3%;width:26%;rotate:-7deg;border-width:.3cqw;padding:1.2cqw 2cqw;clip-path:polygon(1% 0,100% 2%,99% 96%,92% 100%,82% 96%,70% 100%,59% 96%,47% 100%,34% 97%,20% 100%,0 96%)}
+#posterStage.editable-spread .spread-handwritten{left:5%;bottom:2%;font-size:1.8cqw;color:#7984ad}#posterStage.editable-spread .spread-handwritten small{font-size:.9cqw}
+#posterStage.editable-spread .spread-memo{opacity:0;pointer-events:none}.canvas-editing #posterStage.editable-spread .spread-memo{opacity:1}
+#posterStage.editable-spread .spread-stamp{right:25%;bottom:6%;rotate:15deg;opacity:.6}
+#posterStage.editable-spread .spread-close{right:-4%;width:36%;top:-10%;height:56%;filter:saturate(.55) brightness(1.3);opacity:.82}
+#posterStage.editable-spread .spread-photo{filter:saturate(.55) brightness(1.3)}
+#posterStage.editable-spread .spread-extra{filter:saturate(.25) brightness(1.18)}
