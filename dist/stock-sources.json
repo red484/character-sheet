@@ -1,0 +1,15 @@
+{
+  "license": "https://unsplash.com/license",
+  "materials": [
+    {
+      "file": "stock-hydrangea.jpg",
+      "photographer": "yamasa-n",
+      "source": "https://unsplash.com/photos/a-close-up-of-blue-flowers-fBfjtEYX3KQ"
+    },
+    {
+      "file": "stock-paper.jpg",
+      "photographer": "Heather Green",
+      "source": "https://unsplash.com/photos/crumpled-blank-paper-texture-1GuZ9y1qAT8"
+    }
+  ]
+}
