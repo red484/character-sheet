@@ -492,3 +492,15 @@ header .edition{display:none}
 #posterStage.editable-spread .spread-close{right:-4%;width:36%;top:-10%;height:56%;filter:saturate(.55) brightness(1.3);opacity:.82}
 #posterStage.editable-spread .spread-photo{filter:saturate(.55) brightness(1.3)}
 #posterStage.editable-spread .spread-extra{filter:saturate(.25) brightness(1.18)}
+
+/* Shared lavender print grade and fewer, connected material groups. */
+#posterStage.editable-spread .journal-sky{filter:sepia(.12) hue-rotate(20deg) saturate(.6) brightness(1.5)!important}
+#posterStage.editable-spread .spread-close{right:-4%;top:-7%;width:37%;height:62%;rotate:9deg;opacity:.75;filter:none;border:.65cqw solid #fffdfc;box-shadow:0 .3cqw .8cqw #747c9d12;clip-path:polygon(0 0,100% 0,100% 100%,0 96%)}
+#posterStage.editable-spread .spread-photo{left:5%;bottom:12%;width:28%;height:31%;rotate:-7deg;filter:none;border-width:.65cqw;border-bottom-width:2cqw;opacity:.85;box-shadow:.3cqw .4cqw .8cqw #747c9d18}
+#posterStage.editable-spread .spread-title{left:4%;top:30%;width:43%;rotate:-8deg}#posterStage.editable-spread .spread-title em{font-size:10.2cqw!important;color:#7b7dbb!important;letter-spacing:-.03em}#posterStage.editable-spread .spread-title small{top:-11cqw;left:6cqw;background:#f8f8fc!important;background-image:linear-gradient(#ffffffa8,#ffffffa8),url('stock-paper.jpg')!important;box-shadow:none;padding:1cqw 1.3cqw;font-size:.85cqw}
+#posterStage.editable-spread .spread-title p{margin-left:13%;margin-top:.5cqw;width:69%;font-size:1.05cqw}
+#posterStage.editable-spread .spread-name{bottom:5%;right:3%;width:26%;background-image:linear-gradient(#ffffffbb,#ffffffbb),url('stock-paper.jpg');box-shadow:none;border:0;outline:1px solid #b5bad633;outline-offset:-.6cqw}
+#posterStage.editable-spread .spread-ribbon{opacity:.5!important}#posterStage.editable-spread .spread-ribbon path{stroke:#b5b8e699;stroke-width:15}
+#posterStage.editable-spread .spread-stamp{opacity:.25;right:25%;bottom:6%}
+#posterStage.editable-spread .spread-paper{inset:-12% 33% -12% -8%;rotate:-10deg}
+#posterStage.editable-spread .spread-tape{opacity:.45}

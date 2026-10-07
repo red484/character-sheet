@@ -309,3 +309,36 @@ stockCredit.innerHTML+=' · <a href="https://unsplash.com/photos/white-daisy-in-
 
 const restoreBeforePolish=restoreProject;restoreProject=function(s){restoreBeforePolish(s);if(!s?.journalPolishVersion){layerItems.forEach(item=>{if(item.label.startsWith('데이지 ·')){item.el.style.clipPath='none';item.el.style.borderRadius='0';item.el.style.maskImage='radial-gradient(ellipse at 50% 53%,black 28%,#000c 41%,transparent 58%)';item.el.style.webkitMaskImage=item.el.style.maskImage}if(item.label.startsWith('메모 ·')){item.el.style.backgroundImage='linear-gradient(#ffffffb8,#ffffffb8),url(stock-paper.jpg)';item.el.style.backgroundBlendMode='normal,luminosity'}if(item.label==='손글씨 · 꽃 피는 이야기'){item.el.style.left='31%';item.el.style.top='3%';item.el.style.width='19%';item.el.style.fontSize='.8cqw'}})}};
 const snapshotBeforePolish=projectSnapshot;projectSnapshot=async()=>{const s=await snapshotBeforePolish();s.journalPolishVersion=1;return s};
+
+// One coordinated material treatment, applied only to the supplied stock photos.
+const stockSkySignature=[811211, "x56zwKjD2JPRxntcHWSg+kYOmAtjeSkg8YaPOWVZbsyWY++ExWYJjBOB65//2Q=="];
+function isStockSky(url){return url==='stock-sky.jpg'||url?.endsWith('/stock-sky.jpg')||(url?.length===stockSkySignature[0]&&url?.slice(-64)===stockSkySignature[1])}
+const prepareBeforeUnified=preparePoster;preparePoster=function(...args){const v=prepareBeforeUnified(...args);$('#posterStage').querySelectorAll('[data-art]').forEach(el=>el.classList.toggle('journal-sky',isStockSky(sceneFor(chars[selected],el.dataset.art).url)));return v};
+const restoreBeforeUnified=restoreProject;restoreProject=function(s){restoreBeforeUnified(s);if(!s?.unifiedJournalVersion){
+layerItems.forEach(item=>{const el=item.el;
+if(item.label.startsWith('수국 사진')){const x=parseFloat(el.style.left);if(x<0){item.hidden=true;el.style.visibility='hidden'}else if(x<50){Object.assign(el.style,{left:'17%',top:'-12%',width:'24%',opacity:'.75',filter:'saturate(.25) brightness(1.32)',transform:'rotate(18deg)'})}else Object.assign(el.style,{left:'81%',top:'78%',width:'24%',opacity:'.75',filter:'saturate(.25) brightness(1.32)',transform:'rotate(-15deg)'})}
+if(item.label==='데이지 · 우측 조각'||item.kind==='extra'||item.label==='기록 · 컬렉션 넘버'){item.hidden=true;el.style.visibility='hidden'}
+if(item.label==='데이지 · 꽃 스티커'){Object.assign(el.style,{left:'24%',top:'76%',width:'10%',filter:'saturate(.08) brightness(1.35)',opacity:'.8'})}
+if(item.label==='메모 · 같은 하늘'){Object.assign(el.style,{left:'77%',top:'58%',width:'18%',background:'none',padding:'0',boxShadow:'none',clipPath:'none',fontSize:'1.55cqw',color:'#7b83b3',transform:'rotate(-5deg)'})}
+if(item.label==='메모 · 작은 순간'){Object.assign(el.style,{left:'7%',top:'80%',width:'22%',padding:'1cqw 1.3cqw',fontSize:'1.5cqw',color:'#7b83b3',transform:'rotate(-6deg)'})}
+if(item.label==='테이프 · 구름 사진'){Object.assign(el.style,{left:'84%',top:'3%',width:'10%',opacity:'.3'})}
+if(item.label==='손글씨 · 꽃 피는 이야기'){Object.assign(el.style,{left:'28%',top:'11%',width:'21%',opacity:'.6'})}
+});
+const main=layerItems.find(i=>i.kind==='poster');if(main){layerItems.splice(layerItems.indexOf(main),1);const titleIndex=layerItems.findIndex(i=>i.el.classList.contains('spread-title'));layerItems.splice(titleIndex<0?3:titleIndex,0,main)}applyLayerOrder();
+}preparePoster(null,selected)};
+const snapshotBeforeUnified=projectSnapshot;projectSnapshot=async()=>{const s=await snapshotBeforeUnified();s.unifiedJournalVersion=1;return s};
+
+function addBackgroundJournal(){const added=[];
+const part=(name,url,l,t,w,h,a,extra)=>{const el=addJournalPiece(name,'image',url,l,t,w,a,'height:'+h+'%;overflow:hidden;pointer-events:auto;'+extra);added.push(layerItems.find(i=>i.el===el));return el};
+part('배경 · 상단 하늘 조각','stock-sky.jpg',-7,-9,64,29,-12,'opacity:.38;filter:saturate(.4) brightness(1.55);clip-path:polygon(0 0,100% 0,100% 70%,93% 75%,87% 68%,76% 83%,66% 79%,53% 92%,44% 84%,31% 98%,20% 89%,9% 100%,0 93%)');
+part('배경 · 하단 하늘 조각','stock-sky.jpg',-4,80,78,36,-9,'opacity:.32;filter:saturate(.4) brightness(1.55);clip-path:polygon(0 18%,9% 12%,16% 17%,29% 4%,40% 12%,52% 0,61% 6%,74% 1%,82% 9%,93% 0,100% 7%,100% 100%,0 100%)');
+part('배경 · 라벤더 찢어진 종이','stock-paper.jpg',63,21,43,70,12,'opacity:.48;filter:sepia(.1) hue-rotate(190deg);clip-path:polygon(8% 0,100% 0,100% 100%,0 100%,5% 92%,0 81%,6% 70%,1% 58%,7% 48%,2% 39%,8% 29%,3% 19%)');
+part('배경 · 수국 인쇄 조각','stock-hydrangea.jpg',-9,30,26,35,-17,'opacity:.22;filter:saturate(.15) brightness(1.65);mask-image:linear-gradient(90deg,black 20%,transparent 96%)');
+part('배경 · 꽃잎 인쇄 조각','stock-daisy.jpg',73,61,33,48,28,'opacity:.12;filter:grayscale(1) brightness(1.8);mask-image:radial-gradient(ellipse,black 15%,transparent 69%)');
+const note=addJournalPiece('배경 · 손글씨 원고','text',null,8,11,45,-12,'height:60%;overflow:hidden;white-space:pre-line;font:italic 1.55cqw/2.4 Georgia;color:#8793b438;letter-spacing:.03em;','A little more of your colors.\nSomewhere between a dream and a memory,\nour story begins.\n\nCollecting the quiet little moments.\nSame sky, different dreams.\nAlways, in the pages of my heart.');added.push(layerItems.find(i=>i.el===note));
+const vellum=addJournalPiece('배경 · 반투명 격자지','text',null,71,38,37,-7,'height:58%;background:repeating-linear-gradient(0deg,transparent 0 1.9cqw,#8397c326 1.95cqw 2cqw),repeating-linear-gradient(90deg,transparent 0 1.9cqw,#8397c326 1.95cqw 2cqw),#e2e9ff22;border-top:1px solid #ffffff88;color:transparent;',' ');added.push(layerItems.find(i=>i.el===vellum));
+const strip=addJournalPiece('배경 · 기록 띠','text',null,-2,51,56,-11,'padding:.4cqw 1cqw;background:#bdc8e32b;border-block:1px dashed #899abe55;color:#7e8aad88;font:.65cqw Georgia;letter-spacing:.18em;','MEMORIES  /  BLUE ARCHIVE  /  A STORY IN BLOOM  /  01');added.push(layerItems.find(i=>i.el===strip));
+added.forEach(item=>layerItems.splice(layerItems.indexOf(item),1));layerItems.unshift(...added);applyLayerOrder();selectedCanvasText=null;
+}
+const restoreBeforeBackgroundJournal=restoreProject;restoreProject=function(s){restoreBeforeBackgroundJournal(s);if(!s?.backgroundJournalVersion)addBackgroundJournal()};
+const snapshotBeforeBackgroundJournal=projectSnapshot;projectSnapshot=async()=>{const s=await snapshotBeforeBackgroundJournal();s.backgroundJournalVersion=1;return s};
