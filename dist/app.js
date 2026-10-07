@@ -390,7 +390,7 @@ const editBeforePortrait=$('#detailEdit').onclick;$('#detailEdit').onclick=()=>{
 const openBeforePortrait=openCharacterFocus;openCharacterFocus=function(i){profileTab='status';focusDialog.classList.remove('portrait-only');$('#profilePortrait').setAttribute('aria-pressed','false');$('#profilePortrait').textContent='감상';openBeforePortrait(i)};
 // Mobile character lobby: information opens only when requested.
 const archiveSheetClose=document.createElement('button');archiveSheetClose.className='archive-sheet-close';archiveSheetClose.textContent='닫기 ×';archiveSheetClose.setAttribute('aria-label','캐릭터 정보 닫기');dossier.querySelector('.dossier-info').prepend(archiveSheetClose);archiveSheetClose.onclick=()=>focusDialog.classList.remove('mobile-info-open');
-dossier.querySelector('.dossier-nav').addEventListener('click',e=>{if(e.target.closest('[data-profile-tab]')&&matchMedia('(max-width:800px)').matches)focusDialog.classList.add('mobile-info-open')});
+dossier.querySelector('.dossier-nav').addEventListener('click',e=>{if(e.target.closest('[data-profile-tab]')&&matchMedia('(max-width:800px)').matches)focusDialog.classList.add('mobile-info-open')},true);
 const openBeforeLobby=openCharacterFocus;openCharacterFocus=function(i){focusDialog.classList.remove('mobile-info-open');openBeforeLobby(i)};
 const editBeforeLobby=$('#detailEdit').onclick;$('#detailEdit').onclick=()=>{focusDialog.classList.add('mobile-info-open');editBeforeLobby()};
 const renderBeforeLobbyClose=renderDossier;renderDossier=function(){renderBeforeLobbyClose();dossier.querySelector('.dossier-info').prepend(archiveSheetClose)};
