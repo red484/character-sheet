@@ -394,3 +394,11 @@ dossier.querySelector('.dossier-nav').addEventListener('click',e=>{if(e.target.c
 const openBeforeLobby=openCharacterFocus;openCharacterFocus=function(i){focusDialog.classList.remove('mobile-info-open');openBeforeLobby(i)};
 const editBeforeLobby=$('#detailEdit').onclick;$('#detailEdit').onclick=()=>{focusDialog.classList.add('mobile-info-open');editBeforeLobby()};
 const renderBeforeLobbyClose=renderDossier;renderDossier=function(){renderBeforeLobbyClose();dossier.querySelector('.dossier-info').prepend(archiveSheetClose)};
+// Contextual mobile editing keeps the portrait stage visible.
+const mobileEditRail=document.createElement('div');mobileEditRail.id='mobileEditRail';mobileEditRail.innerHTML='<button data-edit-context="image" aria-pressed="true">이미지 조정</button><button data-edit-context="profile" aria-pressed="false">이름 · 설정</button>';focusDialog.append(mobileEditRail);
+function mobileEditContext(mode){focusDialog.classList.toggle('editing-profile',mode==='profile');focusDialog.classList.toggle('mobile-info-open',mode==='profile');mobileEditRail.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.editContext===mode));if(mode==='image'){selectCanvasLayer('poster');showInspectorSection('edit')}renderDossier()}
+mobileEditRail.addEventListener('click',e=>{const b=e.target.closest('[data-edit-context]');if(b)mobileEditContext(b.dataset.editContext)});
+const enterContextEditor=$('#detailEdit').onclick;$('#detailEdit').onclick=()=>{enterContextEditor();if(matchMedia('(max-width:800px)').matches){canvasTools.classList.add('inspector-folded');collapseInspector.textContent='＋';collapseInspector.setAttribute('aria-label','편집창 펼치기');mobileEditContext('image')}};
+const leaveContextEditor=$('#canvasDone').onclick;$('#canvasDone').onclick=()=>{leaveContextEditor();focusDialog.classList.remove('editing-profile','mobile-info-open')};
+dossier.querySelector('.dossier-nav').addEventListener('click',()=>{if(focusDialog.classList.contains('canvas-editing')&&matchMedia('(max-width:800px)').matches)mobileEditContext('profile')},true);
+$('#posterStage .spread-main').addEventListener('click',()=>{if(focusDialog.classList.contains('canvas-editing')&&matchMedia('(max-width:800px)').matches&&focusDialog.classList.contains('editing-profile'))mobileEditContext('image')});
