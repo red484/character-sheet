@@ -715,3 +715,395 @@ html body #characterFocus:not([open]){display:none!important}
 @media(min-width:801px){#characterFocus:not(.canvas-editing) .dossier-info{top:16%;max-height:78%;width:28%;right:3.5%}#characterFocus:not(.canvas-editing) .dossier-name{font-size:clamp(32px,4.1vw,64px)!important}#characterFocus:not(.canvas-editing) .radar-wrap{width:78%;margin:0 auto -6px}.parameter-strip{margin-top:5px}#characterFocus:not(.canvas-editing) .dossier-nav{width:15%;left:3.5%}.scenery-signal{left:21%;top:24%}}
 @media(max-width:800px){.parameter-strip{gap:7px;margin:4px 0;padding:10px 0}.parameter-strip b{font-size:20px}.parameter-strip span{font-size:8px}.scenery-signal{padding:7px 8px;background:#f0f4f044;left:5%;top:25%}.scenery-word{font-size:21vw;top:12%}.scenery-stripe{width:3%}.scenery-coordinate{font-size:6px}.mobile-info-open .scenery-signal{opacity:.4}#characterFocus.mobile-info-open:not(.canvas-editing) .radar-wrap{width:175px;margin:-4px auto -10px}#characterFocus:not(.canvas-editing) .dossier-nav button:hover{padding-left:2px!important}.parameter-strip>div:last-child{border:0}}
 @media(prefers-reduced-motion:no-preference){.parameter-strip>div{animation:parameterEntry .4s both}.parameter-strip>div:nth-child(2){animation-delay:.04s}.parameter-strip>div:nth-child(3){animation-delay:.08s}.parameter-strip>div:nth-child(4){animation-delay:.12s}.parameter-strip>div:nth-child(5){animation-delay:.16s}}@keyframes parameterEntry{from{opacity:0;translate:0 7px}to{opacity:1;translate:0 0}}
+/* Angled character dossier — based on the supplied composition. */
+#characterFocus.poster-mode:not(.canvas-editing) #posterStage.profile-screen{background:#fff!important}
+#characterFocus:not(.canvas-editing) .operator-scenery{background:#fff}
+#characterFocus:not(.canvas-editing) .scenery-band{left:10%;top:-30%;width:43%;height:160%;transform:skewX(-31deg);background:var(--character-accent,#0bc5d1)!important;box-shadow:none;border:0;opacity:.9}
+#characterFocus:not(.canvas-editing) .scenery-band:after,#characterFocus:not(.canvas-editing) .scenery-details,#characterFocus:not(.canvas-editing) .scenery-index,#characterFocus:not(.canvas-editing) .scenery-label,#characterFocus:not(.canvas-editing) .scenery-ticks,#characterFocus:not(.canvas-editing) .scenery-orbit,#characterFocus:not(.canvas-editing) .scenery-floor{display:none}
+#characterFocus:not(.canvas-editing) #posterStage.profile-screen:after{display:none!important}
+#characterFocus:not(.canvas-editing) .dossier-nav{left:0!important;top:19%!important;width:24%!important;gap:17px!important;right:auto!important}
+#characterFocus:not(.canvas-editing) .dossier-nav>span{display:none}
+#characterFocus:not(.canvas-editing) .dossier-nav button{position:relative;min-height:64px;padding:15px 24px!important;gap:12px;border:0!important;background:#111c2def!important;color:#e7edf3!important;clip-path:polygon(0 0,100% 0,92% 100%,0 100%)!important;transform:translate(0,0)!important;transition:transform .28s cubic-bezier(.2,.8,.2,1),background .2s!important;box-shadow:inset 0 4px color-mix(in srgb,var(--character-accent) 70%,transparent)}
+#characterFocus:not(.canvas-editing) .dossier-nav button b{font:700 12px monospace;letter-spacing:.2em}
+#characterFocus:not(.canvas-editing) .dossier-nav button small{font-size:11px;color:#adb8c7}
+#characterFocus:not(.canvas-editing) .dossier-nav button[aria-pressed=true],#characterFocus:not(.canvas-editing) .dossier-nav button[aria-pressed=true]:hover{transform:translate(-22px,7px)!important;background:#061a27!important;padding-left:35px!important;color:var(--character-accent)!important}
+#characterFocus:not(.canvas-editing) .dossier-nav button:hover{background:#22364a!important}
+#characterFocus:not(.canvas-editing) .dossier-info{border:0;padding:0;right:4.5%;top:20%;width:38%;max-height:69%}
+#characterFocus:not(.canvas-editing) .dossier-eyebrow,#characterFocus:not(.canvas-editing) .dossier-rule{display:none}
+#characterFocus:not(.canvas-editing) .dossier-name{font:850 clamp(34px,4.7vw,80px)/1.05 sans-serif!important;letter-spacing:-.055em;color:#080b10!important;margin:35px 0 22px!important}
+#characterFocus:not(.canvas-editing) .profile-identity{position:absolute;top:0;color:#858b91;font-size:13px}
+#characterFocus:not(.canvas-editing) .dossier-description{color:#17202b!important;font-size:13px;line-height:1.7;margin:0 0 16px}
+.detail-record{position:relative;padding:18px 22px;margin:0 0 24px;background:linear-gradient(120deg,#f0f2f5,#f8f9fb);border-top:1px solid #bdc7d0;display:grid;gap:7px;color:#788491;font:11px sans-serif}.detail-record>div{display:flex;gap:24px;max-width:70%}.detail-record small{width:80px;flex-shrink:0;font:9px monospace;letter-spacing:.15em}.record-barcode{position:absolute;right:7%;top:22px;width:25%;height:25px;background:repeating-linear-gradient(90deg,#8591a3 0 1px,transparent 1px 3px,#8591a3 3px 5px,transparent 5px 7px)}
+#characterFocus:not(.canvas-editing) .archive-section-heading{background:linear-gradient(115deg,#172131 0 43%,#f0f2f6 43%);border:0;border-top:1px solid #99a7b8;padding:9px 12px}
+#characterFocus:not(.canvas-editing) .archive-section-heading>span{color:#fff;font-size:8px;letter-spacing:.2em}#characterFocus:not(.canvas-editing) .archive-section-heading h3{font-size:12px}
+#characterFocus:not(.canvas-editing) .radar-wrap{width:190px;margin:0 auto}
+#characterFocus:not(.canvas-editing) .parameter-strip{margin:0;padding:8px 0}
+.detail-roster{position:absolute;bottom:48px;left:3%;display:flex;align-items:end;gap:8px;z-index:30}.detail-roster button{position:relative;width:64px;height:92px;padding:0;background:#d9dde1;border:1px solid #b8c0c8;overflow:hidden;transition:height .25s,border-color .25s}.detail-roster button[aria-pressed=true]{height:125px;border:3px solid var(--character-accent,#0bc5d1)}.detail-roster button span{position:absolute;inset:0;filter:saturate(.5);opacity:.7}.detail-roster button[aria-pressed=true] span,.detail-roster button:hover span{filter:none;opacity:1}.detail-roster button b{position:absolute;bottom:0;left:0;right:0;padding:5px;background:#152232ce;color:#fff;font:11px monospace}
+.detail-pager{position:absolute;right:3%;top:22px;display:flex;align-items:center;gap:12px;z-index:35;color:#67727e;font:14px sans-serif}.detail-pager button{width:40px;height:40px;background:#eef1f5;border:1px solid #bec8d3;color:#273747;font-size:30px}
+#characterFocus:not(.canvas-editing) #focusIndex,#characterFocus:not(.canvas-editing) .archive-actions{display:none}
+#characterFocus:not(.canvas-editing) .dossier-footer{position:fixed;left:0;right:0;bottom:0;height:31px;background:#243044;color:#aab7c8;padding:10px 24px;box-sizing:border-box;letter-spacing:.1em}
+.detail-roster,.detail-pager{display:none}.poster-mode:not(.canvas-editing) .detail-roster,.poster-mode:not(.canvas-editing) .detail-pager{display:flex}
+#characterFocus.poster-mode:not(.canvas-editing) #detailEdit{left:auto;right:160px;bottom:39px;padding:9px 16px;z-index:40}
+@media(min-width:801px){#characterFocus:not(.canvas-editing) #posterStage.profile-screen>.spread-main{left:16%!important;top:6%!important;width:46%!important;height:94%!important}}
+@media(max-width:800px){#characterFocus:not(.canvas-editing) .scenery-band{left:-13%;width:83%;transform:skewX(-20deg)}#characterFocus:not(.canvas-editing) .dossier-nav{top:16%!important;width:33%!important;gap:10px!important}#characterFocus:not(.canvas-editing) .dossier-nav button{min-height:46px;display:flex;flex-direction:column;gap:3px;align-items:flex-start;padding:10px 15px!important}#characterFocus:not(.canvas-editing) .dossier-nav button b{font-size:8px;letter-spacing:.08em}#characterFocus:not(.canvas-editing) .dossier-nav button[aria-pressed=true]{transform:translate(-10px,4px)!important;padding-left:18px!important}.detail-roster{left:14px;bottom:47px;gap:5px}.detail-roster button{width:38px;height:55px}.detail-roster button[aria-pressed=true]{height:72px}.detail-pager{top:17px;right:15px;gap:6px;font-size:11px}.detail-pager button{width:32px;height:32px;font-size:24px}#characterFocus:not(.canvas-editing) .dossier-info{top:auto;right:5%;bottom:130px;width:90%;max-height:32%;padding:25px 14px 10px!important;background:linear-gradient(transparent,#fffffff2 24%)!important}#characterFocus:not(.canvas-editing) .dossier-name{font-size:30px!important;margin:12px 0!important}.detail-record{padding:12px;margin-bottom:15px}.detail-record>div{gap:9px}.detail-record small{width:65px}#characterFocus:not(.canvas-editing) .profile-identity{position:static;font-size:10px}#characterFocus.mobile-info-open:not(.canvas-editing) .dossier-info{top:auto;bottom:125px;max-height:49%;padding-top:30px!important;background:#fffffffa!important}#characterFocus.mobile-info-open:not(.canvas-editing) .dossier-nav{top:13%!important;bottom:auto!important;width:33%!important;display:flex;flex-direction:column}#characterFocus.poster-mode:not(.canvas-editing) #detailEdit{right:16px;bottom:53px}}
+@media(prefers-reduced-motion:reduce){.detail-roster button,#characterFocus:not(.canvas-editing) .dossier-nav button{transition:none!important}}
+#characterFocus:not(.canvas-editing) .scenery-band{background:var(--detail-accent,#0dc6d1)!important}#characterFocus:not(.canvas-editing) .dossier-nav button[aria-pressed=true]{color:#fff!important;box-shadow:inset 0 4px var(--detail-accent,#0dc6d1)}.detail-roster button[aria-pressed=true]{border-color:var(--detail-accent,#0dc6d1)}
+/* Match the supplied 16:9 reference: right-hand typography and paired detail groups. */
+@media(min-width:801px){
+#characterFocus:not(.canvas-editing) .dossier-info{top:17.5%!important;right:4.7%!important;width:35.5%!important;max-height:74%!important;overflow:auto;padding:0!important}
+#characterFocus:not(.canvas-editing) .profile-identity{top:0!important;font:500 clamp(12px,1.15vw,19px)/1.4 sans-serif!important;color:#898989!important;gap:8px}
+#characterFocus:not(.canvas-editing) .dossier-name{font-family:Arial,'Noto Sans KR',sans-serif!important;font-size:clamp(42px,5.2vw,88px)!important;font-weight:900!important;line-height:1.07!important;letter-spacing:-.055em!important;white-space:nowrap;margin:34px 0 27px!important;color:#000!important}
+#characterFocus:not(.canvas-editing) .dossier-description{font:500 clamp(12px,1.12vw,18px)/1.6 'Noto Sans KR',sans-serif!important;color:#080808!important;margin:0 0 10px!important;white-space:pre-line}
+#characterFocus:not(.canvas-editing) .detail-record{margin-left:-1.5vw;margin-right:0;margin-bottom:30px;padding:22px 2.4vw!important;min-height:90px;box-sizing:border-box;background:linear-gradient(110deg,#f2f3f5,#f7f8fa)!important;border:0!important;font-size:11px;gap:5px}
+#characterFocus:not(.canvas-editing) .detail-record:before{content:'';position:absolute;left:2.4vw;right:2.4vw;top:11px;height:1px;background:#b9c2cd}
+#characterFocus:not(.canvas-editing) .detail-record small{width:100px;font:700 9px/1.4 monospace;letter-spacing:.14em;color:#929bac}
+#characterFocus:not(.canvas-editing) .detail-record>div{gap:15px;color:#828b99}
+#characterFocus:not(.canvas-editing) .record-barcode{top:27px;right:7%;width:27%;height:24px}
+#characterFocus:not(.canvas-editing) .record-barcode:after{content:'A STORY YET TO BE WRITTEN.';position:absolute;top:36px;left:-20px;font:5px monospace;letter-spacing:1.5px;white-space:nowrap;color:#9ba5b2}
+#characterFocus:not(.canvas-editing) .dossier-content{margin-left:-7vw;width:calc(100% + 7vw);display:grid;grid-template-columns:1fr 1fr;column-gap:28px;align-items:start}
+#characterFocus:not(.canvas-editing) .archive-section-heading{grid-column:1/-1;margin:0 0 14px;background:linear-gradient(115deg,#152031 0 26%,#f1f3f6 26% 53%,#152031 53% 79%,#f1f3f6 79%);min-height:28px;box-sizing:border-box;padding:7px 23px;border-top:1px solid #9eabb9;position:relative}
+#characterFocus:not(.canvas-editing) .archive-section-heading h3{color:#fff;font:700 9px monospace;letter-spacing:.18em;margin-right:14%}
+#characterFocus:not(.canvas-editing) .archive-section-heading>span{font:700 9px monospace;letter-spacing:.2em}
+#characterFocus:not(.canvas-editing) .radar-wrap{grid-column:1;width:190px;max-width:100%;margin:0 auto!important}
+#characterFocus:not(.canvas-editing) .parameter-strip{grid-column:2;grid-row:2;display:flex;flex-wrap:wrap;gap:8px;border:0;padding:10px 0;margin:0}
+#characterFocus:not(.canvas-editing) .parameter-strip>div{border:1px solid #aeb8c7;background:#f0f3f7;min-width:68px;flex:1;padding:10px 8px;box-sizing:border-box}
+#characterFocus:not(.canvas-editing) .parameter-strip span{font-size:10px;color:#687383}#characterFocus:not(.canvas-editing) .parameter-strip b{font-size:20px;color:#243044}
+#characterFocus:not(.canvas-editing) .signature-trait{display:block;border:0;margin:0;padding:5px 8px}.signature-trait:last-child{grid-column:2}.signature-trait .trait-sigil{margin-bottom:8px}
+#characterFocus:not(.canvas-editing) .dossier-nav{top:14%!important;width:24%!important;gap:17px!important}
+#characterFocus:not(.canvas-editing) .dossier-nav button{min-height:68px!important}
+#characterFocus:not(.canvas-editing) .scenery-band{left:8%;width:43%;top:-35%;height:170%;transform:skewX(-31deg);opacity:1}
+#characterFocus:not(.canvas-editing) .detail-roster{left:2.6%;bottom:31px;gap:24px}
+#characterFocus:not(.canvas-editing) .detail-roster button{width:88px;height:86px;background:#d9d9d9;border:0}
+#characterFocus:not(.canvas-editing) .detail-roster button[aria-pressed=true]{width:144px;height:146px;border-top:3px solid var(--detail-accent)}
+#characterFocus:not(.canvas-editing) .detail-roster button span{opacity:.35;filter:grayscale(1)}#characterFocus:not(.canvas-editing) .detail-roster button[aria-pressed=true] span{opacity:.8;filter:none}
+#characterFocus:not(.canvas-editing) .detail-roster button:nth-child(n+3){width:56px;height:64px}
+#characterFocus.poster-mode:not(.canvas-editing) #detailEdit{bottom:39px;right:3%;min-width:150px;height:55px;background:#172131!important;color:white!important;font-weight:800;font-size:18px}
+#characterFocus:not(.canvas-editing) #posterStage.profile-screen>.spread-main{left:15%!important;width:45%!important;top:5%!important;height:95%!important}
+}
+@media(min-width:801px){#characterFocus:not(.canvas-editing) .dossier-info{overflow:visible!important}#characterFocus:not(.canvas-editing) .dossier-content{max-height:29vh;overflow:auto;scrollbar-width:thin}#characterFocus:not(.canvas-editing) .archive-section-heading h3{margin-right:10%;font-size:9px}#characterFocus:not(.canvas-editing) #detailMotionToggle{bottom:8px!important;right:120px!important;height:20px!important;padding:0 8px!important;font-size:8px!important}#characterFocus:not(.canvas-editing) #replayReveal{bottom:5px!important;height:24px!important;width:32px!important}}
+/* Reference coordinates are normalized from the 1334 × 750 artboard. */
+.reference-overview,.reference-actions{display:none}
+@media(min-width:801px){
+#characterFocus.poster-mode:not(.canvas-editing) #posterStage.profile-screen{background:#fff!important}
+#characterFocus:not(.canvas-editing) .scenery-band{inset:0!important;width:100%!important;height:100%!important;transform:none!important;clip-path:polygon(27% 0,70% 0,38.7% 100%,0 100%,0 78%)!important;background:var(--detail-accent,#0cc5d0)!important;opacity:1!important}
+#characterFocus:not(.canvas-editing) .dossier-info{left:59.9%!important;right:auto!important;top:17.5%!important;width:35.5%!important;height:auto!important;max-height:none!important;overflow:visible!important}
+#characterFocus:not(.canvas-editing) .profile-identity{top:0!important;left:0;font:500 1.2vw/1.5 Arial,sans-serif!important;color:#898989!important}
+#characterFocus:not(.canvas-editing) .dossier-name{font:900 5.25vw/1.05 Arial,'Noto Sans KR',sans-serif!important;letter-spacing:-.045em!important;margin:3vw 0 2vw!important;white-space:nowrap}
+#characterFocus:not(.canvas-editing) .dossier-description{font:500 1.1vw/1.65 'Noto Sans KR',sans-serif!important;margin:0!important;min-height:3.5vw;max-width:100%}
+#characterFocus:not(.canvas-editing) .detail-record{position:relative;left:-1.5vw;width:calc(100% + 1.5vw);height:7.6vw;min-height:0!important;box-sizing:border-box;margin:0!important;padding:2vw 2.5vw 1vw!important;gap:.3vw!important;background:linear-gradient(110deg,#f2f3f5,#f9f9fa)!important}
+#characterFocus:not(.canvas-editing) .detail-record>div{font-size:.8vw;line-height:1.4;gap:1.8vw}#characterFocus:not(.canvas-editing) .detail-record small{font-size:.64vw;width:7.5vw}#characterFocus:not(.canvas-editing) .record-barcode{top:2vw;right:7%;height:1.9vw}
+#characterFocus:not(.canvas-editing) .dossier-nav{top:14.3%!important;left:0!important;width:23.8%!important;gap:2.25vh!important;animation:none!important}
+#characterFocus:not(.canvas-editing) .dossier-nav button{height:9.2vh!important;min-height:0!important;padding:0 0 0 .4vw!important;clip-path:polygon(0 0,100% 0,92% 100%,0 100%)!important;gap:1vw!important}
+#characterFocus:not(.canvas-editing) .dossier-nav button b{font:800 1.6vw monospace!important;letter-spacing:.32em!important;color:#8995a8}#characterFocus:not(.canvas-editing) .dossier-nav button small{font-size:.8vw}
+#characterFocus:not(.canvas-editing) .dossier-nav button[aria-pressed=true]{transform:translate(-4.2vw,.65vh)!important;padding-left:1vw!important;box-shadow:inset 0 4px #0e3543!important}
+#characterFocus:not(.canvas-editing) .reference-overview{position:absolute;left:50.9%;top:58.7%;width:55%;display:grid;grid-template-columns:45% 55%;gap:1.8vw;pointer-events:auto}
+#characterFocus:not(.canvas-editing) .reference-overview h3{height:2.2vw;box-sizing:border-box;margin:0 0 1.1vw;padding:.6vw 2.3vw;background:linear-gradient(115deg,#152031 0 57%,#f1f3f6 57%);border-top:1px solid #9eabb9;font:700 .65vw monospace;letter-spacing:.3em;color:#9eabba}
+.reference-tags{transform:translateY(-.8vw)}.reference-icon-row{display:flex;gap:1.8vw;padding:0 1vw}.reference-icon-row button{background:none;border:0;color:#080b0f;padding:0;display:flex;align-items:center;flex-direction:column;gap:.7vw}.reference-icon-row button b{display:grid;place-items:center;width:3.7vw;height:3.7vw;border:3px double #a6a6a6;border-radius:50%;font:900 2.6vw Arial;background:white;box-shadow:0 -7px 10px #00000014}.reference-icon-row button span{font:700 .55vw sans-serif;max-width:6vw}
+.reference-tag-row{display:flex;gap:.8vw;padding-top:1.1vw}.reference-tag-row button{white-space:nowrap;min-width:9.8vw;height:3.6vw;background:#f0f3f7;border:1px solid #9da8b7;color:#65717e;font:500 1.2vw sans-serif;padding:0 1vw}.reference-tag-row button:first-child{box-shadow:inset 4px 0 #207b83}
+#characterFocus.reference-overview-open:not(.canvas-editing) .dossier-content{display:none!important}
+#characterFocus:not(.reference-overview-open):not(.canvas-editing) .reference-overview{display:none}
+#characterFocus:not(.canvas-editing) .dossier-content{position:relative;margin:2.8vw 0 0 -7vw!important;width:calc(100% + 7vw);max-height:27vh!important}
+#characterFocus.poster-mode:not(.canvas-editing) .reference-actions{display:flex;position:absolute;right:2.6%;bottom:5%;height:9%;z-index:40;background:#f3f4f6;align-items:stretch}
+.reference-actions button{border:0;background:transparent;padding:0 1.2vw;color:#96a2b0;font:500 1.1vw sans-serif}.reference-actions button:last-child{background:#0d1118;color:white;border:3px double #939aa1;font-weight:800;font-size:1.65vw;min-width:14.5vw}
+#characterFocus.poster-mode:not(.canvas-editing) #detailEdit{bottom:0!important;right:18%!important;height:28px!important;min-width:0!important;padding:0 12px!important;background:transparent!important;border:0!important;color:#aab5c7!important;font-size:9px!important;z-index:45}
+#characterFocus:not(.canvas-editing) .detail-roster{left:2.6%!important;bottom:2.8%!important;gap:2.2vw!important}.detail-roster button{box-shadow:none!important}#characterFocus:not(.canvas-editing) .detail-roster button[aria-pressed=true]{width:11.3vw!important;height:21.5vh!important}#characterFocus:not(.canvas-editing) .detail-roster button{width:6.9vw!important;height:13.5vh!important}#characterFocus:not(.canvas-editing) .detail-roster button:nth-child(n+3){width:4.5vw!important;height:9vh!important}
+#characterFocus:not(.canvas-editing) .detail-pager{top:3.4%;right:2.6%;gap:1vw;font:1.3vw sans-serif}#characterFocus:not(.canvas-editing) .detail-pager button{width:3vw;height:2.5vw;background:#536172;color:#fff;border:3px double #b6c1d4}
+#characterFocus:not(.canvas-editing) .dossier-footer{height:4.8vh!important;padding:1.2vh 1.8vw!important;font-size:.5vw;background:#303e51!important}
+#characterFocus.portrait-only .reference-overview,#characterFocus.portrait-only .reference-actions{display:none!important}
+}
+@media(min-width:801px){#characterFocus:not(.canvas-editing) .dossier-name{font-family:'Arial Black',Arial,sans-serif!important;font-weight:900!important;transform:scaleX(1.13);transform-origin:left center;-webkit-text-stroke:.5px #000}#characterFocus:not(.canvas-editing) .reference-overview{top:60%!important}#characterFocus:not(.canvas-editing) .dossier-nav{gap:2.5vh!important}#characterFocus:not(.canvas-editing) #detailMotionToggle{bottom:7px!important;right:65px!important;width:auto!important;height:19px!important;min-height:0!important;background:transparent!important;border:0!important;color:#a6b3c5!important;font-size:7px!important}#characterFocus:not(.canvas-editing) #replayReveal{bottom:5px!important;right:12px!important;min-height:0!important;background:transparent!important;border:0!important;color:#a6b3c5!important}#characterFocus:not(.canvas-editing) #focusBack{background:linear-gradient(110deg,#25344a,#f1f3f9)!important;color:#fff!important;width:16vw;border:0!important;text-align:left;padding-left:18px;font-weight:700}}
+@media(min-width:801px){#characterFocus.reference-show-status.reference-overview-open:not(.canvas-editing) .dossier-content{display:grid!important}#characterFocus.reference-show-status:not(.canvas-editing) .reference-overview{display:none!important}}
+/* Shared title edge and level keyword rows. */
+@media(min-width:801px){
+#characterFocus:not(.canvas-editing) .reference-overview{left:59.9%!important;width:37.5%!important;grid-template-columns:44% minmax(0,56%);gap:1.2vw!important;top:60%!important;align-items:start}
+#characterFocus:not(.canvas-editing) .reference-tags{transform:none!important}
+#characterFocus:not(.canvas-editing) .reference-overview h3{margin:0 0 1.1vw!important;height:2.2vw!important;padding:.6vw 1vw!important;background:linear-gradient(115deg,#152031 0 70%,#f1f3f6 70%)}
+#characterFocus:not(.canvas-editing) .reference-icon-row{padding:0!important;gap:.8vw!important;align-items:flex-start}
+#characterFocus:not(.canvas-editing) .reference-tag-row{padding-top:0!important;gap:.55vw!important;overflow-x:auto;scrollbar-width:thin;align-items:flex-start}
+#characterFocus:not(.canvas-editing) .reference-tag-row button{height:3.7vw!important;min-width:8vw!important;padding:0 .8vw!important;font-size:1vw!important;flex-shrink:0}
+#characterFocus:not(.canvas-editing) .detail-record{left:0!important;width:100%!important}
+}
+/* Profile record spans the headline; larger emblems and quieter tags. */
+@media(min-width:801px){
+#characterFocus:not(.canvas-editing) .detail-record{width:calc(100% + 3.3vw)!important;height:8vw!important;padding:2vw 2.5vw 1vw!important;gap:.35vw!important}
+#characterFocus:not(.canvas-editing) .detail-record>div{font-size:1vw!important;line-height:1.45!important}
+#characterFocus:not(.canvas-editing) .detail-record small{font-size:.8vw!important;width:7.5vw!important}
+#characterFocus:not(.canvas-editing) .reference-icon-row{gap:1vw!important}
+#characterFocus:not(.canvas-editing) .reference-icon-row button b{width:4.6vw!important;height:4.6vw!important;font-size:3.2vw!important}
+#characterFocus:not(.canvas-editing) .reference-icon-row button span{font-size:.6vw!important}
+#characterFocus:not(.canvas-editing) .reference-tag-row button{font-size:.8vw!important;min-width:7.3vw!important;padding:0 .65vw!important}
+}
+/* Usability polish: readable rail, compact keyword stack, unified controls. */
+#characterFocus:not(.canvas-editing) .detail-pager{gap:12px!important;align-items:center;font:600 12px/1 Arial,sans-serif!important;letter-spacing:.06em;color:#596574}
+#characterFocus:not(.canvas-editing) .detail-pager button{display:grid;place-items:center;width:36px!important;height:36px!important;padding:0!important;border:1px solid #cbd2dc!important;background:#f5f7f9!important;color:#243346!important;font:400 26px/1 Arial,sans-serif!important;box-shadow:none;border-radius:3px}
+#characterFocus:not(.canvas-editing) .detail-pager button:hover{background:#e5edf1!important}
+@media(min-width:801px){
+#characterFocus:not(.canvas-editing) .dossier-nav button{padding:0 28px!important;gap:12px!important;transition:transform .25s ease,background .2s!important}
+#characterFocus:not(.canvas-editing) .dossier-nav button b{font:700 clamp(11px,1.05vw,17px)/1 Arial,sans-serif!important;letter-spacing:.1em!important;color:#ecf0f6!important}
+#characterFocus:not(.canvas-editing) .dossier-nav button small{font:500 clamp(10px,.8vw,13px)/1 'Noto Sans KR',sans-serif!important;color:#b4c2d0!important}
+#characterFocus:not(.canvas-editing) .dossier-nav button[aria-pressed=true]{transform:translate(-12px,5px)!important;padding-left:40px!important;background:#0b202d!important;box-shadow:inset 0 3px var(--detail-accent)!important}
+#characterFocus:not(.canvas-editing) .reference-overview{width:38.8%!important;grid-template-columns:44% minmax(0,56%)!important;column-gap:16px!important;box-sizing:border-box;padding-right:16px}
+#characterFocus:not(.canvas-editing) .reference-overview h3{height:27px!important;margin-bottom:14px!important;padding:8px 12px!important;font:700 9px/1 monospace!important;letter-spacing:.18em!important;background:linear-gradient(115deg,#182638 0 64%,#f0f3f7 64%)!important}
+#characterFocus:not(.canvas-editing) .reference-icon-row{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px!important;align-items:start}
+#characterFocus:not(.canvas-editing) .reference-icon-row button{width:100%;gap:8px}
+#characterFocus:not(.canvas-editing) .reference-icon-row button b{width:clamp(42px,4.2vw,66px)!important;height:clamp(42px,4.2vw,66px)!important;font-size:clamp(27px,2.8vw,44px)!important;border:1px solid #aab7c5;outline:1px solid #dbe1e8;outline-offset:3px;box-shadow:none}
+#characterFocus:not(.canvas-editing) .reference-icon-row button span{font:500 clamp(9px,.68vw,11px)/1.4 'Noto Sans KR',sans-serif!important;max-width:100%;color:#455263;word-break:keep-all}
+#characterFocus:not(.canvas-editing) .reference-tag-row{display:flex!important;flex-direction:column!important;gap:6px!important;overflow:visible!important;padding:0!important}
+#characterFocus:not(.canvas-editing) .reference-tag-row button{display:block;width:100%;height:29px!important;min-width:0!important;min-height:0!important;padding:0 12px!important;text-align:left;font:500 11px/1.3 'Noto Sans KR',sans-serif!important;border:1px solid #ccd5df;background:#f4f6f9;color:#4d5c6b;box-shadow:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#characterFocus:not(.canvas-editing) .reference-tag-row button:first-child{border-left:3px solid var(--detail-accent)}
+#characterFocus.poster-mode:not(.canvas-editing) .reference-actions{left:59.9%;right:2%;bottom:7.5%;height:44px!important;gap:7px;background:none!important;align-items:stretch}
+#characterFocus:not(.canvas-editing) .reference-actions button{display:flex;align-items:center;justify-content:center;flex:1;min-width:0!important;padding:0 10px!important;border:1px solid #d4dce5!important;background:#f2f5f8!important;color:#566579!important;font:600 11px/1 'Noto Sans KR',sans-serif!important;white-space:nowrap;border-radius:3px}
+#characterFocus:not(.canvas-editing) .reference-actions button:last-child{flex:1.45;background:#182b3e!important;border:1px solid #182b3e!important;color:#fff!important;font-size:12px!important}
+#characterFocus:not(.canvas-editing) .reference-actions button:hover{filter:brightness(.96)}
+#characterFocus:not(.canvas-editing) .dossier-footer{height:32px!important;padding:11px 25px!important;font:600 8px/1 Arial,sans-serif!important;letter-spacing:.12em!important;color:#9eafc3!important}
+#characterFocus.poster-mode:not(.canvas-editing) #detailEdit{display:none!important}
+#characterFocus:not(.canvas-editing) #detailMotionToggle{bottom:6px!important;right:58px!important;height:20px!important;padding:0 10px!important;background:none!important;font:500 9px/1 Arial,sans-serif!important;color:#c5d0df!important}
+#characterFocus:not(.canvas-editing) #replayReveal{bottom:5px!important;right:20px!important;width:26px!important;height:22px!important;font-size:13px!important}
+#characterFocus:not(.canvas-editing) #focusBack{width:auto!important;min-width:112px;height:38px;background:#f5f7f9!important;border:1px solid #cbd2dc!important;border-radius:3px!important;color:#344559!important;font:600 12px Arial,sans-serif!important;box-shadow:none}
+}
+@media(min-width:801px){html body #characterFocus.poster-mode:not(.canvas-editing) #detailMotionToggle,html body #characterFocus.poster-mode:not(.canvas-editing) #replayReveal{background:transparent!important;border:0!important;color:#c5d0df!important;box-shadow:none!important}html body #characterFocus.poster-mode:not(.canvas-editing) #detailMotionToggle{bottom:6px!important;right:58px!important;min-height:0!important;height:20px!important}html body #characterFocus.poster-mode:not(.canvas-editing) #replayReveal{bottom:5px!important;right:20px!important;min-height:0!important;height:22px!important}}
+/* Larger, readable left navigation labels. */
+@media(min-width:801px){#characterFocus:not(.canvas-editing) .dossier-nav button b{font-size:clamp(14px,1.35vw,22px)!important;letter-spacing:.075em!important}#characterFocus:not(.canvas-editing) .dossier-nav button small{font-size:clamp(11px,.95vw,15px)!important}#characterFocus:not(.canvas-editing) .dossier-nav button{gap:12px!important}}
+/* Bold navigation fills the slanted blocks. */
+@media(min-width:801px){
+#characterFocus:not(.canvas-editing) .dossier-nav button{display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;gap:4px!important;padding:5px 18px!important}
+#characterFocus:not(.canvas-editing) .dossier-nav button b{font-family:Arial,sans-serif!important;font-size:clamp(25px,3vw,54px)!important;font-weight:900!important;line-height:.95!important;letter-spacing:-.035em!important}
+#characterFocus:not(.canvas-editing) .dossier-nav button[data-profile-tab="personality"] b{font-size:clamp(19px,2.2vw,40px)!important;letter-spacing:-.045em!important}
+#characterFocus:not(.canvas-editing) .dossier-nav button small{font-size:clamp(10px,.85vw,14px)!important;line-height:1!important;letter-spacing:.08em!important}
+#characterFocus:not(.canvas-editing) .dossier-nav button[aria-pressed=true]{padding-left:30px!important}
+}
+/* Larger central character without moving editable source transforms. */
+@media(min-width:801px){#characterFocus:not(.canvas-editing) #posterStage.profile-screen>.spread-main{left:11%!important;top:-7%!important;width:51%!important;height:112%!important}}
+/* Art-directed foreground overlap, preserving the roster hit targets. */
+@media(min-width:801px){
+#characterFocus:not(.canvas-editing) #posterStage.profile-screen>.spread-main{left:7.5%!important;top:-16%!important;width:60%!important;height:126%!important;z-index:12!important;pointer-events:none!important;filter:drop-shadow(14px 8px 18px #102e3820)}
+#characterFocus:not(.canvas-editing) .detail-roster{z-index:10!important}
+#characterFocus:not(.canvas-editing) .detail-roster button span{opacity:.46!important}
+#characterFocus:not(.canvas-editing) .detail-roster button[aria-pressed=true] span{opacity:.9!important}
+}
+@media(min-width:801px){#characterFocus:not(.canvas-editing) #posterStage.profile-screen>.spread-main{left:4%!important}}
+/* Directional motion system for the angled dossier. */
+@keyframes dossierCurtain{from{clip-path:polygon(27% 0,27% 0,0 100%,0 100%);opacity:.3}to{clip-path:polygon(27% 0,70% 0,38.7% 100%,0 100%,0 78%);opacity:1}}
+@keyframes dossierHero{from{opacity:0;translate:65px 18px;filter:blur(5px)}to{opacity:1;translate:0 0;filter:blur(0)}}
+@keyframes dossierType{from{opacity:0;clip-path:inset(0 100% 0 0);translate:25px 0}to{opacity:1;clip-path:inset(0);translate:0 0}}
+@keyframes dossierRail{from{opacity:0;translate:-70px 0}to{opacity:1;translate:0 0}}
+@keyframes dossierLift{from{opacity:0;translate:0 14px}to{opacity:1;translate:0 0}}
+@keyframes dossierLine{from{scale:0 1}to{scale:1 1}}
+@media(prefers-reduced-motion:no-preference){
+#characterFocus.poster-mode:not(.canvas-editing) .scenery-band{animation:dossierCurtain .8s cubic-bezier(.16,1,.3,1) both!important}
+#characterFocus.poster-mode:not(.canvas-editing) #posterStage.profile-screen>.spread-main{animation:dossierHero .85s .1s cubic-bezier(.16,1,.3,1) both!important}
+#characterFocus.poster-mode:not(.canvas-editing) .dossier-info{animation:none!important}
+#characterFocus.poster-mode:not(.canvas-editing) .dossier-name{animation:dossierType .65s .25s cubic-bezier(.16,1,.3,1) both!important}
+#characterFocus.poster-mode:not(.canvas-editing) .profile-identity{animation:dossierLift .45s .32s both}
+#characterFocus.poster-mode:not(.canvas-editing) .dossier-description{animation:dossierLift .5s .4s both}
+#characterFocus.poster-mode:not(.canvas-editing) .detail-record{animation:dossierLift .55s .46s both}
+#characterFocus.poster-mode:not(.canvas-editing) .dossier-nav{animation:none!important}
+#characterFocus.poster-mode:not(.canvas-editing) .dossier-nav button{animation:dossierRail .55s calc(.12s + var(--rail-order,0)*.065s) cubic-bezier(.16,1,.3,1) both!important;transition:transform .3s cubic-bezier(.16,1,.3,1),background .2s,box-shadow .2s!important}
+#characterFocus .dossier-nav button:nth-of-type(2){--rail-order:1}#characterFocus .dossier-nav button:nth-of-type(3){--rail-order:2}#characterFocus .dossier-nav button:nth-of-type(4){--rail-order:3}
+#characterFocus.poster-mode:not(.canvas-editing) .reference-overview{animation:dossierLift .55s .52s both}
+#characterFocus.poster-mode:not(.canvas-editing) .reference-actions{animation:dossierLift .5s .65s both}
+#characterFocus.poster-mode:not(.canvas-editing) .detail-roster{animation:dossierLift .6s .45s both}
+#characterFocus:not(.canvas-editing) .reference-overview h3{transform-origin:left;animation:dossierLine .6s .55s both}
+#characterFocus:not(.canvas-editing) .reference-icon-row button,#characterFocus:not(.canvas-editing) .reference-tag-row button,#characterFocus:not(.canvas-editing) .reference-actions button,#characterFocus:not(.canvas-editing) .detail-pager button{transition:translate .2s,background .2s,box-shadow .2s,scale .2s}
+#characterFocus:not(.canvas-editing) .reference-icon-row button:hover{translate:0 -4px}
+#characterFocus:not(.canvas-editing) .reference-tag-row button:hover{translate:-4px 0;background:#e7eef4}
+#characterFocus:not(.canvas-editing) .reference-actions button:hover,#characterFocus:not(.canvas-editing) .detail-pager button:hover{translate:0 -2px;box-shadow:0 5px 12px #13283f18}
+#characterFocus:not(.canvas-editing) .reference-actions button:active,#characterFocus:not(.canvas-editing) .detail-pager button:active{scale:.96;translate:0 1px}
+}
+@media(prefers-reduced-motion:reduce){#characterFocus .reference-overview,#characterFocus .reference-overview *,#characterFocus .reference-actions,#characterFocus .reference-actions *,#characterFocus .detail-roster,#characterFocus .detail-pager *{animation:none!important;transition:none!important}}
+html body #characterFocus.motion-off *,html body #characterFocus.canvas-editing .reference-overview *{animation:none!important;transition:none!important}
+@media(max-width:800px){#characterFocus.poster-mode:not(.canvas-editing) .scenery-band{animation:operatorStage .6s ease-out both!important}}
+/* Narrow-window dossier: one viewport, no legacy fading/scrolling layers. */
+@media(max-width:800px){
+html body #characterFocus[open].poster-mode:not(.canvas-editing){position:fixed!important;inset:0!important;width:100vw!important;height:100dvh!important;max-height:none!important;margin:0!important;padding:0!important;overflow:hidden!important;background:#fff!important}
+html body #characterFocus.poster-mode:not(.canvas-editing) #posterStage.profile-screen{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;transform:none!important;overflow:hidden!important}
+html body #characterFocus:not(.canvas-editing) #posterStage.profile-screen>.spread-main{left:24%!important;top:4%!important;width:80%!important;height:57%!important;mask-image:none!important;-webkit-mask-image:none!important;opacity:1!important;pointer-events:none!important}
+html body #characterFocus:not(.canvas-editing) .dossier-nav{left:0!important;top:13%!important;right:auto!important;bottom:auto!important;width:32%!important;gap:8px!important;display:flex!important;flex-direction:column!important}
+html body #characterFocus:not(.canvas-editing) .dossier-nav button{height:44px!important;min-height:44px!important;padding:8px 12px!important;gap:4px!important;align-items:flex-start!important;justify-content:center!important}
+html body #characterFocus:not(.canvas-editing) .dossier-nav button b{font:800 clamp(10px,2.4vw,16px)/1 Arial!important;letter-spacing:.02em!important}html body #characterFocus:not(.canvas-editing) .dossier-nav button small{font-size:9px!important}
+html body #characterFocus:not(.canvas-editing) .dossier-info{position:absolute!important;left:5%!important;right:5%!important;top:53%!important;bottom:auto!important;width:90%!important;height:calc(47% - 112px)!important;max-height:none!important;padding:12px 0 0!important;background:#fff!important;border:0!important;box-shadow:none!important;overflow:auto!important;mask-image:none!important}
+html body #characterFocus:not(.canvas-editing) .dossier-name{font:900 clamp(26px,6vw,40px)/1.05 Arial!important;letter-spacing:-.04em!important;margin:0 0 8px!important;transform:none!important;white-space:normal!important}
+html body #characterFocus:not(.canvas-editing) .profile-identity{position:static!important;font-size:10px!important;margin:0 0 8px!important}
+html body #characterFocus:not(.canvas-editing) .dossier-description{font-size:11px!important;line-height:1.5!important;margin:0 0 10px!important}
+html body #characterFocus:not(.canvas-editing) .detail-record{margin:0!important;padding:12px!important;gap:5px!important;min-height:75px!important}.detail-record>div{gap:12px!important}.detail-record small{width:80px!important}.record-barcode{right:5%!important;width:25%!important}
+html body #characterFocus.reference-overview-open:not(.reference-show-status):not(.canvas-editing) .dossier-content{display:none!important}
+html body #characterFocus:not(.canvas-editing) .archive-sheet-close,html body #characterFocus:not(.canvas-editing) .dossier-tab-marker{display:none!important}
+html body #characterFocus:not(.canvas-editing) .detail-roster{left:5%!important;bottom:47px!important;gap:6px!important;height:54px!important;align-items:end!important}
+html body #characterFocus:not(.canvas-editing) .detail-roster button{width:34px!important;height:43px!important}html body #characterFocus:not(.canvas-editing) .detail-roster button[aria-pressed=true]{height:54px!important}
+html body #characterFocus.poster-mode:not(.canvas-editing) .reference-actions{display:flex!important;position:absolute!important;right:5%!important;bottom:52px!important;height:38px!important;z-index:40;gap:5px}
+html body #characterFocus:not(.canvas-editing) .reference-actions button{display:none}html body #characterFocus:not(.canvas-editing) .reference-actions button:last-child{display:block;background:#182b3e;color:white;padding:0 14px;border:0;border-radius:3px;font-size:11px}
+html body #characterFocus.poster-mode:not(.canvas-editing) #detailEdit{display:none!important}
+html body #characterFocus:not(.canvas-editing) #focusBack{top:15px!important;left:15px!important;min-height:32px!important;height:32px!important;padding:0 12px!important;font-size:11px!important}
+html body #characterFocus:not(.canvas-editing) .detail-pager{top:15px!important;right:15px!important}
+html body #characterFocus:not(.canvas-editing) .dossier-footer{position:fixed!important;bottom:0!important;left:0!important;right:0!important;height:31px!important;font-size:6px!important;padding:12px!important;background:#243044!important}
+html body #characterFocus.poster-mode:not(.canvas-editing) #detailMotionToggle{bottom:6px!important;right:48px!important;min-height:19px!important;height:19px!important;padding:0 6px!important;font-size:8px!important;background:transparent!important;border:0!important;color:#c5d0df!important}
+html body #characterFocus.poster-mode:not(.canvas-editing) #replayReveal{bottom:5px!important;right:12px!important;width:25px!important;height:22px!important;min-height:0!important;background:transparent!important;border:0!important;color:#c5d0df!important}
+}
+@media(max-width:800px){html body #characterFocus:not(.canvas-editing) #posterStage.profile-screen>.spread-main{top:-10%!important;height:66%!important}html body #characterFocus:not(.canvas-editing) #posterStage.profile-screen:before{content:''!important;display:block!important;position:absolute!important;inset:53% 0 0!important;z-index:14!important;background:#fff!important;opacity:1!important;animation:none!important;pointer-events:none!important}html body #characterFocus:not(.canvas-editing) .character-dossier{z-index:20!important}html body #characterFocus:not(.canvas-editing) .detail-roster{z-index:40!important}html body #characterFocus:not(.canvas-editing) .dossier-footer{z-index:50!important;background:#243044!important;color:#b2c0d0!important}}
+@media(max-width:800px){html body #characterFocus[open].poster-mode:not(.canvas-editing) #posterStage.profile-screen>.spread-main{position:absolute!important;inset:0!important;left:24%!important;top:-12%!important;width:80%!important;height:66%!important;max-height:66%!important;overflow:hidden!important;z-index:1!important;clip-path:inset(0)!important}html body #characterFocus[open].poster-mode:not(.canvas-editing) #posterStage.profile-screen>.character-dossier{z-index:25!important}html body #characterFocus[open].poster-mode:not(.canvas-editing) .dossier-info{z-index:30!important;background:white!important}}
+/* Clear retained selection; every information tab shares the name's left edge. */
+@media(min-width:801px){
+html body #characterFocus.poster-mode:not(.canvas-editing) .dossier-nav button{transform:translateX(0)!important;transition:transform .32s cubic-bezier(.16,1,.3,1),background .2s!important}
+html body #characterFocus.poster-mode:not(.canvas-editing) .dossier-nav button[aria-pressed=true]{transform:translateX(-38px)!important;padding-left:56px!important;background:#071b28!important;box-shadow:inset 0 4px var(--detail-accent),inset 0 -2px var(--detail-accent)!important}
+html body #characterFocus.poster-mode:not(.canvas-editing) .dossier-nav button[aria-pressed=true] b{color:#fff!important}
+html body #characterFocus:not(.canvas-editing) .dossier-content{display:flex!important;flex-direction:column!important;position:relative!important;left:0!important;width:100%!important;margin:24px 0 0!important;padding:0 8px 10px 0!important;gap:0!important;max-height:25vh!important;overflow:auto!important;scrollbar-width:thin;scrollbar-color:#9aabba #edf1f5}
+html body #characterFocus.reference-overview-open:not(.reference-show-status):not(.canvas-editing) .dossier-content{display:none!important}
+html body #characterFocus.reference-show-status.reference-overview-open:not(.canvas-editing) .dossier-content{display:flex!important}
+html body #characterFocus:not(.canvas-editing) .dossier-content .archive-section-heading{flex:none;width:100%;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(115deg,#172638 0 48%,#f1f4f7 48%)!important;min-height:30px;margin:0 0 12px;padding:8px 12px!important}
+html body #characterFocus:not(.canvas-editing) .dossier-content .archive-section-heading h3{color:#425267!important;margin:0!important;font:600 11px/1.3 sans-serif!important;letter-spacing:0!important}
+html body #characterFocus:not(.canvas-editing) .signature-trait{display:flex!important;gap:14px;width:100%;padding:12px 0!important;margin:0!important;border-bottom:1px solid #dce3eb;flex:none}
+html body #characterFocus:not(.canvas-editing) .signature-trait .trait-sigil{flex:0 0 36px;margin:0!important}
+html body #characterFocus:not(.canvas-editing) .memory-entry,html body #characterFocus:not(.canvas-editing) .personality-note{width:100%;margin:0!important;padding:12px 0!important;border-bottom:1px solid #dce3eb;flex:none}
+html body #characterFocus:not(.canvas-editing) .memory-copy,html body #characterFocus:not(.canvas-editing) .trait-note{font-size:12px;line-height:1.65;margin:5px 0 0}
+html body #characterFocus:not(.canvas-editing) .profile-motto{margin:0 0 12px!important;font-size:20px!important}
+html body #characterFocus:not(.canvas-editing) .radar-wrap{flex:none}html body #characterFocus:not(.canvas-editing) .parameter-strip{flex:none}
+}
+/* Quiet typography detailing within character records. */
+@media(min-width:801px){
+html body #characterFocus:not(.canvas-editing) .dossier-content{padding-right:12px!important}
+html body #characterFocus:not(.canvas-editing) .memory-entry,html body #characterFocus:not(.canvas-editing) .personality-note{box-sizing:border-box;padding:15px 18px 17px!important;border-left:0!important;border-bottom:1px solid #e3e9ef!important;margin:0!important}
+html body #characterFocus:not(.canvas-editing) .memory-entry h4{margin:0 0 8px!important;padding:0!important;font-size:13px!important;line-height:1.5!important;letter-spacing:-.015em!important;color:#283e50!important}
+html body #characterFocus:not(.canvas-editing) .memory-copy{margin:0!important;padding:0!important;font-size:12px!important;line-height:1.85!important;letter-spacing:-.01em!important;color:#627384!important;word-break:keep-all;overflow-wrap:anywhere}
+html body #characterFocus:not(.canvas-editing) .signature-trait{padding:15px 18px!important;gap:14px!important;align-items:flex-start!important}
+html body #characterFocus:not(.canvas-editing) .trait-title{margin:0 0 7px!important;line-height:1.5!important;font-size:13px!important}
+html body #characterFocus:not(.canvas-editing) .trait-note{margin:0!important;line-height:1.85!important;color:#627384!important;word-break:keep-all;overflow-wrap:anywhere}
+html body #characterFocus:not(.canvas-editing) .personality-note>span{display:block;margin-bottom:8px;font-size:9px;letter-spacing:.12em}
+html body #characterFocus:not(.canvas-editing) .personality-note p{margin:0!important;line-height:1.85!important;font-size:12px!important}
+html body #characterFocus:not(.canvas-editing) .profile-motto{margin:6px 18px 12px!important;line-height:1.55!important}
+html body #characterFocus:not(.canvas-editing) .personality-copy{margin:0 18px 15px!important;line-height:1.85!important}
+html body #characterFocus:not(.canvas-editing) .memory-entry:last-child,html body #characterFocus:not(.canvas-editing) .personality-note:last-child{border-bottom:0!important}
+}
+.game-cut{position:absolute;inset:0;z-index:60;overflow:hidden;pointer-events:none}.game-cut i{position:absolute;inset:-20% -15%;opacity:0;transform:skewX(-30deg);background:linear-gradient(90deg,transparent 25%,var(--detail-accent,#0cc5d0) 25% 29%,#102432 29% 45%,transparent 45%)}.game-cut i:nth-child(2){background:linear-gradient(90deg,transparent 30%,#ffffff 30% 31%,transparent 31%)}.game-cut span{position:absolute;top:45%;left:38%;opacity:0;color:#fff;font:800 15px monospace;letter-spacing:.3em}
+@keyframes gameHeroEntry{0%{opacity:0;translate:75px 8px;scale:1.045;filter:blur(4px)}65%{opacity:1;filter:blur(0)}100%{opacity:1;translate:0 0;scale:1;filter:blur(0)}}
+@keyframes gameHeaderScan{from{clip-path:inset(0 100% 0 0);opacity:.25}to{clip-path:inset(0);opacity:1}}
+@media(prefers-reduced-motion:no-preference){
+#characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) #posterStage.profile-screen>.spread-main{animation:gameHeroEntry .85s .12s cubic-bezier(.16,1,.3,1) both!important}
+#characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .dossier-name{animation:dossierType .6s .36s cubic-bezier(.16,1,.3,1) both!important}
+#characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .detail-record{animation:gameHeaderScan .5s .5s cubic-bezier(.16,1,.3,1) both!important}
+#characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .reference-icon-row button{animation:dossierLift .4s .64s both}
+#characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .reference-icon-row button:nth-child(2){animation-delay:.71s}
+#characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .reference-icon-row button:nth-child(3){animation-delay:.78s}
+#characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .reference-tag-row button{animation:dossierType .4s .7s both}
+#characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .reference-tag-row button:nth-child(2){animation-delay:.76s}
+#characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .reference-tag-row button:nth-child(3){animation-delay:.82s}
+}
+#characterFocus.motion-off .game-cut,#characterFocus.canvas-editing .game-cut{display:none}
+@media(prefers-reduced-motion:reduce){.game-cut{display:none}}
+
+/* Reference motion: short directional travel, staggered menu labels and records.
+   Individual translate preserves the selected tab's existing transform. */
+@keyframes archiveMenuArrival{from{opacity:0;translate:-46px 0;clip-path:inset(0 100% 0 0)}to{opacity:1;translate:0 0;clip-path:inset(0)}}
+@keyframes archiveWordsArrival{from{opacity:0;translate:22px 0;clip-path:inset(0 100% 0 0)}to{opacity:1;translate:0 0;clip-path:inset(0)}}
+@keyframes archiveRowArrival{from{opacity:0;translate:18px 0}to{opacity:1;translate:0 0}}
+@media(prefers-reduced-motion:no-preference){
+html body #characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .dossier-nav button{animation:archiveMenuArrival .48s calc(.10s + var(--rail-order,0)*.075s) cubic-bezier(.22,1,.36,1) backwards!important}
+html body #characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .dossier-nav button b{animation:archiveRowArrival .36s calc(.21s + var(--rail-order,0)*.075s) both!important}
+html body #characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .dossier-nav button small{animation:archiveRowArrival .36s calc(.27s + var(--rail-order,0)*.075s) both!important}
+html body #characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .profile-identity{animation:archiveRowArrival .4s .22s backwards!important}
+html body #characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .dossier-name{animation:archiveWordsArrival .52s .27s backwards!important}
+html body #characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .dossier-description{animation:archiveRowArrival .44s .38s backwards!important}
+html body #characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .detail-record{animation:gameHeaderScan .42s .43s backwards!important}
+html body #characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .detail-record>div{animation:archiveRowArrival .34s .49s backwards!important}
+html body #characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .detail-record>div:nth-child(2){animation-delay:.55s!important}
+html body #characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .detail-record>div:nth-child(3){animation-delay:.61s!important}
+html body #characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .reference-overview{animation:none!important}
+html body #characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .reference-overview h3{animation:gameHeaderScan .4s .56s backwards!important}
+html body #characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .reference-icon-row button,html body #characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .reference-tag-row button{animation:archiveRowArrival .36s .65s backwards!important}
+html body #characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .reference-icon-row button:nth-child(2),html body #characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .reference-tag-row button:nth-child(2){animation-delay:.71s!important}
+html body #characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .reference-icon-row button:nth-child(3),html body #characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .reference-tag-row button:nth-child(3){animation-delay:.77s!important}
+html body #characterFocus.poster-mode:not(.canvas-editing):not(.motion-off) .reference-actions{animation:archiveRowArrival .4s .79s backwards!important}
+}
+
+/* Text and navigation only: no full-screen transition sweep. */
+#characterFocus .game-cut{display:none!important}
+
+/* Lift the introduction slightly without moving the record below it. */
+#characterFocus:not(.canvas-editing) .dossier-description{position:relative;top:-8px}
+.portrait-fit-tools{display:grid;gap:10px;padding:14px;background:#edf3f8;color:#203447;border:1px solid #bfcdd9;border-radius:8px}.portrait-fit-tools label{display:flex;align-items:center;gap:8px;font-size:12px}.portrait-fit-tools button{min-height:40px;background:#203447;color:white;border:0;border-radius:5px}.portrait-fit-tools small{font-size:11px;line-height:1.6;color:#52697c}
+html body #characterFocus.portrait-fitted:not(.canvas-editing) #posterStage.profile-screen>.spread-main{left:14%!important;top:3%!important;width:45%!important;height:93%!important;max-height:none!important;background-size:contain!important;background-position:center bottom!important;mask-image:none!important;-webkit-mask-image:none!important}
+/* Fit the artwork itself, not its wrapper: full stage height, bottom anchored. */
+html body #characterFocus.portrait-fitted:not(.canvas-editing) #posterStage.profile-screen>.spread-main{left:4%!important;top:0!important;bottom:0!important;width:60%!important;height:100%!important;overflow:visible!important}
+html body #characterFocus.portrait-fitted:not(.canvas-editing) #posterStage.profile-screen>.spread-main .collage-hero{background-size:auto 100%!important;background-position:center bottom!important;background-repeat:no-repeat!important;mask-image:none!important;-webkit-mask-image:none!important}
+.profile-form-dialog{width:min(560px,calc(100vw - 24px));max-height:calc(100dvh - 24px);padding:0;border:1px solid #d7e0e8;border-radius:16px;background:#f6f8fb;color:#203348;box-shadow:0 24px 100px #071c3866;overflow:hidden}.profile-form-dialog::backdrop{background:#12233399;backdrop-filter:blur(5px)}.profile-form-dialog header{display:flex;align-items:center;justify-content:space-between;padding:22px 24px 16px}.profile-form-dialog h2{margin:5px 0 0;font-size:23px}.profile-form-dialog small{font-size:10px;letter-spacing:.16em;color:#78899a}.profile-form-dialog button{min-height:44px;cursor:pointer;border:1px solid #cbd6e1;border-radius:8px;background:white;color:#263d51;padding:0 16px}.profile-form-dialog nav{display:flex;gap:8px;padding:0 24px 16px}.profile-form-dialog nav button{flex:1}.profile-form-dialog nav button[aria-pressed=true],.profile-form-dialog footer button{background:#203b50;color:white;border-color:#203b50}.profile-form-body{overflow:auto;max-height:calc(100dvh - 235px);padding:0 24px 16px;overscroll-behavior:contain}.profile-form-body details{border:1px solid #dce4eb;border-radius:10px;margin:0 0 10px;background:white}.profile-form-body summary{padding:16px;font-weight:700;cursor:pointer}.profile-form-body details>div{padding:0 16px 18px;display:grid;gap:14px}.profile-form-body label{display:grid;gap:7px;font-size:12px;font-weight:600;color:#506276}.profile-form-body input,.profile-form-body textarea{box-sizing:border-box;width:100%;min-height:44px;padding:12px;font:400 15px/1.6 sans-serif;border:1px solid #cbd6e1;border-radius:7px;background:#f9fbfd;color:#182d40}.profile-form-body textarea{min-height:90px;resize:vertical}.profile-form-body input:focus,.profile-form-body textarea:focus{outline:2px solid #51a6c7;outline-offset:1px}.profile-form-dialog footer{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;background:white;border-top:1px solid #dce4eb}.profile-form-dialog footer span{font-size:12px;color:#6b7d8c}
+html body #characterFocus:not(.canvas-editing) .reference-actions{gap:6px!important}html body #characterFocus:not(.canvas-editing) .reference-actions button{min-width:0!important;padding:0 10px!important;font-size:12px!important}
+html body .profile-form-dialog>header{position:static!important;inset:auto!important;width:auto!important;height:auto!important;transform:none!important;display:flex!important;padding:20px 24px 14px!important;background:transparent!important;color:#203348!important}html body .profile-form-dialog input{background:#f9fbfd!important;color:#182d40!important;border:1px solid #cbd6e1!important;border-radius:7px!important}html body .profile-form-dialog label{margin:0!important}html body .profile-form-dialog footer{position:static!important;width:auto!important;margin:0!important}
+/* Compact character navigation: clear selection, quieter surrounding tabs. */
+html body #characterFocus.poster-mode:not(.canvas-editing) .dossier-nav{width:20%!important;gap:12px!important;top:19%!important}
+html body #characterFocus.poster-mode:not(.canvas-editing) .dossier-nav button{height:62px!important;min-height:62px!important;padding:10px 22px!important;opacity:.46;transition:opacity .22s ease,transform .3s cubic-bezier(.16,1,.3,1),background .22s!important;background:#172638!important;box-shadow:none!important;clip-path:polygon(0 0,100% 0,calc(100% - 22px) 100%,0 100%)!important}
+html body #characterFocus.poster-mode:not(.canvas-editing) .dossier-nav button b{font:800 clamp(20px,2.3vw,34px)/1 Arial,sans-serif!important;letter-spacing:-.04em!important}
+html body #characterFocus.poster-mode:not(.canvas-editing) .dossier-nav button[data-profile-tab=personality] b{font-size:clamp(17px,1.65vw,25px)!important}
+html body #characterFocus.poster-mode:not(.canvas-editing) .dossier-nav button small{font-size:10px!important;line-height:1.2!important;margin-top:5px!important;letter-spacing:.05em!important}
+html body #characterFocus.poster-mode:not(.canvas-editing) .dossier-nav button[aria-pressed=true]{opacity:1;background:#0b202e!important;transform:translateX(-12px)!important;padding-left:34px!important;box-shadow:inset 0 2px var(--detail-accent),inset 0 -2px var(--detail-accent)!important}
+html body #characterFocus.poster-mode:not(.canvas-editing) .dossier-nav button:hover,html body #characterFocus.poster-mode:not(.canvas-editing) .dossier-nav button:focus-visible{opacity:1}
+html body #characterFocus.poster-mode:not(.canvas-editing) .dossier-nav button:focus-visible{outline:2px solid var(--detail-accent);outline-offset:3px}
+
+/* Slightly smaller navigation blocks, retaining readable labels. */
+html body #characterFocus.poster-mode:not(.canvas-editing) .dossier-nav{width:18%!important;gap:10px!important}
+html body #characterFocus.poster-mode:not(.canvas-editing) .dossier-nav button{height:54px!important;min-height:54px!important;padding-top:7px!important;padding-bottom:7px!important}
+/* Quiet floating tools over the actual detail view. */
+#characterFocus.live-design #posterStage{filter:none!important;box-shadow:none!important;border:0!important}
+#characterFocus.live-design #posterStage .spread-main{pointer-events:auto!important;animation:none!important}
+#characterFocus.live-design #posterStage .collage-hero{pointer-events:auto!important;cursor:grab;touch-action:none}
+#characterFocus.live-design #posterStage .collage-hero:active{cursor:grabbing}
+#characterFocus.live-design .game-options-title,#characterFocus.live-design #mobileEditRail,#characterFocus.live-design .game-theme-button,#characterFocus.live-design .dossier-edit-hint{display:none!important}
+#characterFocus.live-design #canvasTools{width:280px!important;max-height:65vh!important;background:#f8fafdf2!important;box-shadow:0 8px 32px #13283824!important}
+#characterFocus.live-design #canvasTools.inspector-folded{width:220px!important;max-height:58px!important}
+#characterFocus.live-design #editorActionBar{background:#f8fafdf2!important;box-shadow:0 4px 18px #13283820!important}
+#characterFocus.live-design .canvas-selected{outline:1px dashed #319ebc!important;outline-offset:-2px!important;background-color:transparent!important}
+#characterFocus#characterFocus.live-design .game-options-title,#characterFocus#characterFocus.live-design #mobileEditRail,#characterFocus#characterFocus.live-design .game-theme-button{display:none!important}
+#characterFocus#characterFocus.live-design #editorActionBar{position:fixed!important;top:8px!important;left:auto!important;right:12px!important;width:auto!important;height:42px!important;padding:4px 8px!important;z-index:10050!important;border-radius:8px!important}
+#characterFocus#characterFocus.live-design #editorActionBar:before{display:none!important}
+#characterFocus#characterFocus.live-design #canvasTools{position:fixed!important;left:auto!important;right:12px!important;top:60px!important;bottom:auto!important;z-index:10040!important}
+#characterFocus#characterFocus#characterFocus.live-design{overflow:clip!important}
+
+#canvasTools .canvas-tool-head{touch-action:none;cursor:grab;user-select:none}#canvasTools.inspector-dragging .canvas-tool-head{cursor:grabbing}
+
+/* Cast size controls stay outside the illustration and title. */
+.cast-count-control{position:absolute;z-index:6;left:50%;bottom:24px;transform:translateX(-50%);display:flex;align-items:center;gap:12px;padding:7px 12px;border:1px solid #ffffff35;border-radius:12px;background:#17232de8;backdrop-filter:blur(16px);color:#edf1f3;font-size:12px;white-space:nowrap}
+.cast-count-control button{width:34px;height:34px;border:1px solid #ffffff38;border-radius:7px;background:#ffffff0c;font-size:21px;line-height:1;color:inherit}.cast-count-control button:hover:not(:disabled){background:#ffffff25}.cast-count-control button:disabled{opacity:.25;cursor:default}.cast-count-control output{min-width:26px;text-align:center;font-variant-numeric:tabular-nums}.cast-count-control small{color:#a7b7c4;font-size:10px}
+#canvas[data-cast-count="1"] .panels{left:35%;right:35%}#canvas[data-cast-count="2"] .panels{left:25%;right:25%}#canvas[data-cast-count="3"] .panels{left:17%;right:17%}#canvas[data-cast-count="5"] .panels{left:7%;right:7%;gap:10px}#canvas[data-cast-count="5"] .panel-caption strong{font-size:clamp(12px,1.8vw,25px)}
+@media(max-width:600px){.cast-count-control{bottom:22px;gap:8px;padding:6px 9px}.cast-count-control small{display:none}#canvas[data-cast-count="1"] .panels{left:24%;right:24%}#canvas[data-cast-count="2"] .panels{left:17%;right:17%}#canvas[data-cast-count="3"] .panels{left:10%;right:10%}#canvas[data-cast-count="5"] .panels{left:4%;right:4%;gap:5px}#canvas[data-cast-count="5"] .panel-caption{left:4px}#canvas[data-cast-count="5"] .panel-caption strong{font-size:11px}}
+
+/* One quiet roster icon; count controls appear only on demand. */
+.cast-count-control{position:fixed;left:90px;bottom:26px;transform:none;padding:0;border:0;border-radius:50%;background:transparent;backdrop-filter:none;gap:0;z-index:7}
+.cast-count-control .cast-count-toggle{display:grid;place-items:center;width:52px;height:52px;padding:14px;border:1px solid #b6c6ba45;border-radius:50%;background:#15232bd9;color:#eae8e0;box-shadow:inset 0 0 0 4px #ffffff03;backdrop-filter:blur(16px);transition:background .2s,transform .2s}
+.cast-count-toggle svg{width:23px;height:23px}.cast-count-toggle[aria-expanded=true]{background:#334640}.cast-count-control .cast-count-toggle:hover{transform:translateY(-2px)}
+.cast-count-popover{position:absolute;bottom:64px;left:0;display:flex;align-items:center;gap:10px;padding:9px;border:1px solid #ffffff29;border-radius:12px;background:#18262ef5;box-shadow:0 12px 30px #0004;animation:cast-pop-in .16s ease-out}
+.cast-count-popover[hidden]{display:none}.cast-count-popover output{font-size:12px;min-width:32px}.cast-count-popover button{width:38px;height:38px}
+@keyframes cast-pop-in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){.cast-count-control{left:86px;bottom:26px;padding:0}.cast-count-popover button{width:44px;height:44px}}
+@media(prefers-reduced-motion:reduce){.cast-count-popover{animation:none}}
+
+.cast-removal{position:absolute;left:0;bottom:124px;width:244px;padding:14px;border:1px solid #ffffff29;border-radius:14px;background:#18262efa;box-shadow:0 14px 38px #0006;max-height: min(440px,60svh);overflow:auto;color:#edf1f3}.cast-removal[hidden]{display:none}.cast-removal>strong{display:block;font-size:13px;margin-bottom:5px}.cast-removal>small{display:block!important;color:#a7b7c4;font-size:11px;margin-bottom:12px}.cast-count-control .cast-removal-item{display:flex;align-items:center;gap:10px;width:100%;height:48px;margin-top:5px;padding:5px 9px;text-align:left;font-size:12px;border-color:#ffffff16;border-radius:8px}.cast-removal-item>span:nth-child(2){flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.cast-removal-item>span:last-child{font-size:20px;color:#c9d6df}.cast-removal-picture{flex:none;width:32px;height:36px;background-size:cover;background-position:center 25%;border-radius:5px;background-color:#ffffff12;display:grid;place-items:center;font-size:11px}
+
+.cast-removal{bottom:64px;width:268px;max-height:min(460px,calc(100svh - 120px));padding:12px;white-space:normal}.cast-sheet-head{display:flex;align-items:center;gap:7px;margin-bottom:8px}.cast-sheet-head strong{font-size:13px;font-weight:600}.cast-count-control .cast-sheet-head button{width:30px;height:30px;border:0;background:transparent;font-size:24px}.cast-removal>small{padding:0 5px;margin-bottom:12px}.cast-count-control .cast-new-choice{display:flex;align-items:center;gap:12px;width:100%;height:auto;min-height:62px;padding:11px;text-align:left;border-color:#b7cfdb50;background:#ffffff0b;font-size:13px;border-radius:9px}.cast-new-choice>span:first-child{font-size:25px}.cast-new-choice small{display:block!important;color:#a7b7c4;font-size:11px;margin-top:4px}.cast-archive-label{font-size:11px;color:#a7b7c4;margin:18px 5px 8px;letter-spacing:.2px}.cast-empty-note{color:#99aab6;font-size:12px;padding:8px 5px;margin:0}.cast-removal-item{min-height:48px}.cast-count-control .cast-removal-item:hover{border-color:#b7cfdb60}
+@media(max-width:420px){.cast-removal{left:-60px;width:min(280px,calc(100vw - 40px))}}
+
+/* Keep the image action prominent without adding another panel. */
+#touchReplace{min-height:44px} .cast-count-control .cast-sheet-head button{width:36px;height:36px}.cast-removal-item:focus-visible,.cast-new-choice:focus-visible{outline:2px solid #c7deec;outline-offset:2px}
+
+/* Keep editing controls touch-sized while the game artboard scales independently. */
+@media(max-width:800px){
+#characterFocus#characterFocus#characterFocus#characterFocus.live-design{left:0!important;top:0!important;inset:0!important;width:100vw!important;height:100dvh!important;max-width:none!important;max-height:none!important;transform:none!important;background:#172330!important;overflow:hidden!important}
+#characterFocus#characterFocus#characterFocus#characterFocus.live-design #posterStage{position:absolute!important;left:0!important;top:calc((100dvh - 720px * var(--fit-scale, .5))/2)!important;width:1280px!important;height:720px!important;transform:scale(var(--fit-scale,.5))!important;transform-origin:top left!important}
+#characterFocus#characterFocus#characterFocus#characterFocus.live-design #editorActionBar{position:fixed!important;left:10px!important;right:10px!important;top:10px!important;bottom:auto!important;width:auto!important;max-width:none!important;transform:none!important;display:flex!important;flex-wrap:wrap!important;gap:4px!important;padding:6px!important;background:#f8fafdf5!important;color:#233849!important}
+#characterFocus#characterFocus#characterFocus#characterFocus.live-design #editorActionBar button{min-height:40px!important;font-size:12px!important;padding:6px 10px!important}
+#characterFocus#characterFocus#characterFocus#characterFocus.live-design #canvasTools{top:116px!important;right:10px!important;left:auto!important;width:260px!important;max-height:calc(100dvh - 180px)!important;background:#f8fafdf5!important;color:#233849!important}
+#characterFocus#characterFocus#characterFocus#characterFocus.live-design #canvasTools.inspector-folded{width:150px!important;height:48px!important}
+#characterFocus.live-design #focusBack{display:none!important}
+}
+
+#characterFocus#characterFocus#characterFocus#characterFocus.live-design .canvas-tool-head{background:#f8fafdf5!important;color:#233849!important;border-radius:12px!important}#characterFocus#characterFocus#characterFocus#characterFocus.live-design .canvas-tool-head button{color:#233849!important;background:#edf2f8!important;min-height:40px!important}
+
+.profile-form-body details>.profile-stat-fields{grid-template-columns:minmax(0,1fr) 90px;gap:12px 14px}.profile-form-body .profile-stat-fields input{margin:0!important;min-width:0}.profile-form-body .profile-stat-fields label{margin:0!important}.profile-form-body .profile-stat-fields label:nth-child(even) input{text-align:center;font-variant-numeric:tabular-nums}
+
+.detail-quick-nav{position:absolute;z-index:50;right:26px;top:65px;display:flex;gap:6px}.detail-quick-nav button{padding:8px 12px;border:1px solid #d6dee5;background:#fff;color:#354657;font-size:12px;border-radius:5px}.detail-quick-nav button[aria-pressed=true]{background:#182638;color:white}.live-design .detail-quick-nav{display:none!important}
+#characterFocus#characterFocus#characterFocus#characterFocus .dossier-nav button{background:var(--user-bar,#182638)!important}
+#characterFocus#characterFocus#characterFocus#characterFocus .reference-overview h3{background:linear-gradient(115deg,var(--user-bar,#182638) 0 64%,#f0f3f7 64%)!important}
+@media(max-width:800px){
+#characterFocus#characterFocus#characterFocus#characterFocus.live-design #posterStage{top:78px!important}
+#characterFocus#characterFocus#characterFocus#characterFocus.live-design #canvasTools{top:calc(94px + 720px * var(--fit-scale,.5))!important;left:10px!important;right:10px!important;width:auto!important;max-height:calc(100dvh - 110px - 720px * var(--fit-scale,.5))!important;bottom:auto!important;overflow:auto!important}
+#characterFocus#characterFocus#characterFocus#characterFocus.live-design #canvasTools.inspector-folded{width:auto!important;height:48px!important}
+#characterFocus#characterFocus#characterFocus.content-editing{top:60px!important}
+.profile-form-dialog[open]{position:fixed;inset:auto 0 0!important;margin:0!important;width:100%!important;max-width:none!important;height:52dvh!important;max-height:52dvh!important;border-radius:16px 16px 0 0!important;box-sizing:border-box}.profile-form-dialog::backdrop{background:transparent}.profile-form-dialog header{padding:12px 18px!important}.profile-form-dialog h2{font-size:19px!important}.profile-form-dialog nav{display:none!important}.profile-form-body{padding:10px 18px!important}.profile-form-body input,.profile-form-body textarea{font-size:16px!important;min-height:42px}.profile-form-dialog footer{padding:10px 18px!important}
+}
